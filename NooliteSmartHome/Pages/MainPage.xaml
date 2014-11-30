@@ -14,8 +14,8 @@
     shell:SystemTray.IsVisible="True">
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/feature.settings.png" Text="{StaticResource BtnSettings}" IsEnabled="True" Click="XXX"/>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/questionmark.png" Text="{StaticResource BtnAbout}" IsEnabled="True"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/feature.settings.png" Text="{StaticResource BtnSettings}" IsEnabled="True" Click="BtnSettingsClick"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/questionmark.png" Text="{StaticResource BtnAbout}" IsEnabled="True" Click="BtnAboutClick" />
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 

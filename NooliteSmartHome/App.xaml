@@ -10,7 +10,6 @@
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:NooliteSmartHome" x:Key="LocalizedStrings"/>
     	<System:String x:Key="BtnSettings">settings</System:String>
-    	<System:String x:Key="ApplicationTitle">NOOLITE SMART HOME</System:String>
     	<System:String x:Key="BtnAbout">about</System:String>
     </Application.Resources>
 

@@ -84,13 +84,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CommandFormat.cs" />
-    <Compile Include="Configuration\PR1132Channel.cs" />
-    <Compile Include="Configuration\PR1132ChannelType.cs" />
+    <Compile Include="Configuration\Pr1132Channel.cs" />
+    <Compile Include="Configuration\Pr1132ChannelType.cs" />
     <Compile Include="Configuration\Pr1132Configuration.cs" />
-    <Compile Include="Configuration\PR1132ControlGroup.cs" />
-    <Compile Include="Configuration\PR1132SensorData.cs" />
-    <Compile Include="Configuration\PR1132Timer.cs" />
-    <Compile Include="Configuration\PR1132TimerCommad.cs" />
+    <Compile Include="Configuration\Pr1132ControlGroup.cs" />
+    <Compile Include="Configuration\Pr1132SensorData.cs" />
+    <Compile Include="Configuration\Pr1132Timer.cs" />
+    <Compile Include="Configuration\Pr1132TimerCommad.cs" />
     <Compile Include="Configuration\SensorState.cs" />
     <Compile Include="Encodings\BaseSingleByteEncoding.cs" />
     <Compile Include="Encodings\Windows1251Encoding.cs" />
