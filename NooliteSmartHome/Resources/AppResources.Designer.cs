@@ -79,6 +79,24 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to brightness.
+        /// </summary>
+        public static string GroupBrightness {
+            get {
+                return ResourceManager.GetString("GroupBrightness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to scene.
+        /// </summary>
+        public static string GroupScene {
+            get {
+                return ResourceManager.GetString("GroupScene", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to management.
         /// </summary>
         public static string MainPageTitle {

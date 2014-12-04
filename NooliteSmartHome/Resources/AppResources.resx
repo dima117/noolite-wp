@@ -123,6 +123,12 @@
   <data name="ApplicationTitle" xml:space="preserve">
     <value>NOOLITE SMART HOME</value>
   </data>
+  <data name="GroupBrightness" xml:space="preserve">
+    <value>brightness</value>
+  </data>
+  <data name="GroupScene" xml:space="preserve">
+    <value>scene</value>
+  </data>
   <data name="MainPageTitle" xml:space="preserve">
     <value>management</value>
   </data>

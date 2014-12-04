@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -11,15 +12,22 @@
     d:DesignHeight="260">
 
 	<StackPanel>
-		<TextBlock x:Name="TbChannelName" Style="{StaticResource PhoneTextGroupHeaderStyle}" />
+		<toolkit:ToggleSwitch x:Name="Switcher" />
 		<StackPanel x:Name="PanelSlider" Orientation="Vertical">
-			<TextBlock Text="яркость" Style="{StaticResource PhoneTextSmallStyle}" />
+			<TextBlock x:Name="LabelSlider" Style="{StaticResource PhoneTextSmallStyle}" />
 			<Slider Minimum="0" Maximum="100" Value="65" Background="{StaticResource PhoneChromeBrush}" ></Slider>
 		</StackPanel>
 		<StackPanel x:Name="PanelLed" Orientation="Horizontal">
 			<Button Content="цвет"></Button>
 			<Button Content="перелив"></Button>
 			<Button Content="стоп" Width="132"></Button>
+		</StackPanel>
+		<StackPanel x:Name="PanelScene" Orientation="Vertical">
+			<TextBlock x:Name="LabelScene" Style="{StaticResource PhoneTextSmallStyle}" />
+			<StackPanel Orientation="Horizontal">
+				<Button Content="применить"></Button>
+				<Button Content="сохранить"></Button>
+			</StackPanel>
 		</StackPanel>
 	</StackPanel>
 </UserControl>

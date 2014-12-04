@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows;
 using NooliteSmartHome.Gateway.Configuration;
+using NooliteSmartHome.Resources;
 
 namespace NooliteSmartHome.Pages
 {
@@ -16,15 +17,24 @@ namespace NooliteSmartHome.Pages
 
 		private void SetChannelType(Pr1132ChannelUiType value)
 		{
+			Switcher.Visibility = GetVisibility(value, Pr1132ChannelUiType.Switcher);
 			PanelSlider.Visibility = GetVisibility(value, Pr1132ChannelUiType.Dimmer, Pr1132ChannelUiType.LED);
 			PanelLed.Visibility = GetVisibility(value, Pr1132ChannelUiType.LED);
+			PanelScene.Visibility = GetVisibility(value, Pr1132ChannelUiType.RestoreState);
 		}
 
 		private static Visibility GetVisibility(Pr1132ChannelUiType target, params Pr1132ChannelUiType[] types)
 		{
 			return types.Contains(target) ? Visibility.Visible : Visibility.Collapsed;
 		}
-		
+
+		private void SetChannelName(string name)
+		{
+			Switcher.Header = name;
+			LabelSlider.Text = string.Format("{0} ({1})", name, AppResources.GroupBrightness);
+			LabelScene.Text = string.Format("{0} ({1})", name, AppResources.GroupScene);
+		}
+
 		#endregion
 
 		#region channel name
@@ -34,10 +44,12 @@ namespace NooliteSmartHome.Pages
 
 		private static void ChannelNamePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
+
 			var myControl = d as GroupItem;
 			if (myControl != null)
 			{
-				myControl.TbChannelName.Text = e.NewValue as string;
+				var value = e.NewValue as string;
+				myControl.SetChannelName(value);
 			}
 		}
 
@@ -56,7 +68,7 @@ namespace NooliteSmartHome.Pages
 
 		private static void ChannelTypePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
-			
+
 			var myControl = d as GroupItem;
 			if (myControl != null)
 			{
