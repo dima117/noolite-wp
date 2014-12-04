@@ -9,7 +9,23 @@ namespace NooliteSmartHome.Pages
 		public GroupItem()
 		{
 			InitializeComponent();
+			SetChannelType(default(Pr1132ChannelUiType));
 		}
+
+		#region set channel type
+
+		private void SetChannelType(Pr1132ChannelUiType value)
+		{
+			PanelSlider.Visibility = GetVisibility(value, Pr1132ChannelUiType.Dimmer, Pr1132ChannelUiType.LED);
+			PanelLed.Visibility = GetVisibility(value, Pr1132ChannelUiType.LED);
+		}
+
+		private static Visibility GetVisibility(Pr1132ChannelUiType target, params Pr1132ChannelUiType[] types)
+		{
+			return types.Contains(target) ? Visibility.Visible : Visibility.Collapsed;
+		}
+		
+		#endregion
 
 		#region channel name
 
@@ -40,18 +56,12 @@ namespace NooliteSmartHome.Pages
 
 		private static void ChannelTypePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
-			var value = (Pr1132ChannelUiType)e.NewValue;
+			
 			var myControl = d as GroupItem;
 			if (myControl != null)
 			{
-				myControl.PanelSlider.Visibility = GetVisibility(
-					value,
-					Pr1132ChannelUiType.Dimmer,
-					Pr1132ChannelUiType.LED);
-
-				myControl.PanelLed.Visibility = GetVisibility(
-					value,
-					Pr1132ChannelUiType.LED);
+				var value = (Pr1132ChannelUiType)e.NewValue;
+				myControl.SetChannelType(value);
 			}
 		}
 
@@ -59,11 +69,6 @@ namespace NooliteSmartHome.Pages
 		{
 			get { return (Pr1132ChannelUiType)GetValue(ChannelTypeProperty); }
 			set { SetValue(ChannelTypeProperty, value); }
-		}
-
-		private static Visibility GetVisibility(Pr1132ChannelUiType target, params Pr1132ChannelUiType[] types)
-		{
-			return types.Contains(target) ? Visibility.Visible : Visibility.Collapsed;
 		}
 
 		#endregion
