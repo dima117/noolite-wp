@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:local="clr-namespace:NooliteSmartHome"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -31,6 +32,23 @@
 		</StackPanel>
 
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+			<TextBlock x:Name="EmptyTextBlock" Visibility="Collapsed" Style="{StaticResource PhoneTextGroupHeaderStyle}">
+				Приложение не настроено
+			</TextBlock>
+			<phone:LongListSelector x:Name="GroupList" ItemsSource="{Binding}" SelectionChanged="GroupListBox_OnSelectionChanged">
+				<phone:LongListSelector.ItemTemplate>
+					<DataTemplate>
+						<StackPanel Orientation="Horizontal" local:TiltEffect.IsTiltEnabled="True" Margin="6"  >
+							<Border Background="{StaticResource PhoneAccentBrush}" Width="61" Height="61">
+								<Image Width="61" 
+								Height="61"
+								Source="../Assets/Groups/Bulb.png" />
+							</Border>
+							<TextBlock Text="{Binding Name}" Height="61" VerticalAlignment="Center" Style="{StaticResource PhoneTextLargeStyle}" />
+						</StackPanel>
+					</DataTemplate>
+				</phone:LongListSelector.ItemTemplate>
+			</phone:LongListSelector>
 
 		</Grid>
 

@@ -98,6 +98,7 @@
     <Compile Include="GatewayLedCommand.cs" />
     <Compile Include="Pr1132Gateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\ApplicationSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

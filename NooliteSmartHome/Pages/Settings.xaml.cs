@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using NooliteSmartHome.Gateway.Configuration;
+using NooliteSmartHome.Gateway.Settings;
 
 namespace NooliteSmartHome.Pages
 {
@@ -19,6 +12,14 @@ namespace NooliteSmartHome.Pages
 		public Settings()
 		{
 			InitializeComponent();
+			FillData();
+		}
+
+		private void FillData()
+		{
+			var settings = ApplicationSettings.Current;
+			TbGatewayHost.Text = settings.Host;
+			TbGatewayUser.Text = settings.User;
 		}
 
 		private void BtnDownloadClick(object sender, RoutedEventArgs e)

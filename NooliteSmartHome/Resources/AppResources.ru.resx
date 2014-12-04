@@ -134,7 +134,16 @@
     <value>ru</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
+  <data name="SettingsHostLabel" xml:space="preserve">
+    <value>Адрес Ethernet-шлюза PR1132</value>
+  </data>
   <data name="SettingsPageTitle" xml:space="preserve">
     <value>настройки</value>
+  </data>
+  <data name="SettingsPasswordLabel" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="SettingsUserLabel" xml:space="preserve">
+    <value>Логин</value>
   </data>
 </root>

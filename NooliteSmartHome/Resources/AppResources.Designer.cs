@@ -106,11 +106,38 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PR1132 Gateway address.
+        /// </summary>
+        public static string SettingsHostLabel {
+            get {
+                return ResourceManager.GetString("SettingsHostLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to settings.
         /// </summary>
         public static string SettingsPageTitle {
             get {
                 return ResourceManager.GetString("SettingsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string SettingsPasswordLabel {
+            get {
+                return ResourceManager.GetString("SettingsPasswordLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string SettingsUserLabel {
+            get {
+                return ResourceManager.GetString("SettingsUserLabel", resourceCulture);
             }
         }
     }

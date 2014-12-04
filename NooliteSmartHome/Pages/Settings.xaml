@@ -27,9 +27,18 @@
 		</StackPanel>
 
 		<!--ContentPanel - place additional content here-->
-		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-			<Button Content="download" HorizontalAlignment="Left" VerticalAlignment="Top" Width="446" Click="BtnDownloadClick"/>
+		<Grid x:Name="ContentPanel" Grid.Row="1">
+			<StackPanel>
+				<TextBlock Text="{Binding Path=LocalizedResources.SettingsHostLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
+				<TextBox x:Name="TbGatewayHost"></TextBox>
+				<TextBlock Text="{Binding Path=LocalizedResources.SettingsUserLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
+				<TextBox x:Name="TbGatewayUser"></TextBox>
+				<TextBlock Text="{Binding Path=LocalizedResources.SettingsPasswordLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
+				<PasswordBox x:Name="TbGatewayPassword"></PasswordBox>
+				<Button Content="download" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDownloadClick"/>
+			</StackPanel>
 
+	
 		</Grid>
 	</Grid>
 
