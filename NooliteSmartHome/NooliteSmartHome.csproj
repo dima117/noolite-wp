@@ -94,7 +94,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
-    <Compile Include="Model\GroupControlModel.cs" />
+    <Compile Include="Model\ChannelModel.cs" />
+    <Compile Include="Model\GroupModel.cs" />
     <Compile Include="Pages\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -116,6 +117,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ApplicationDataLoader.cs" />
+    <Compile Include="Helpers\ApplicationSettings.cs" />
     <Compile Include="TiltEffect.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,10 +156,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\AppBar\cancel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\AppBar\feature.settings.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\AppBar\questionmark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\ApplicationIcon.png">

@@ -21,11 +21,17 @@ namespace NooliteSmartHome.Pages
 		{
 			base.OnNavigatedTo(e);
 
-			string msg;
+			string strIndex;
 
-			if (NavigationContext.QueryString.TryGetValue("msg", out msg))
+			if (NavigationContext.QueryString.TryGetValue("index", out strIndex))
 			{
-				TbGroupName.Text = msg;
+				int index;
+				if (int.TryParse(strIndex, out index))
+				{
+					MessageBox.Show(index.ToString(), "Yes!", MessageBoxButton.OK);
+				}
+
+				TbGroupName.Text = strIndex;
 			}
 
 

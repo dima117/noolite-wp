@@ -3,7 +3,7 @@ using System.IO.IsolatedStorage;
 using System.Net.Http;
 using System.Windows;
 using Microsoft.Phone.Controls;
-using NooliteSmartHome.Gateway.Settings;
+using NooliteSmartHome.Helpers;
 
 namespace NooliteSmartHome.Pages
 {
@@ -18,8 +18,8 @@ namespace NooliteSmartHome.Pages
 		private void FillData()
 		{
 			var settings = ApplicationSettings.Current;
-			TbGatewayHost.Text = settings.Host;
-			TbGatewayUser.Text = settings.User;
+			TbGatewayHost.Text = settings.Host ?? string.Empty;
+			TbGatewayUser.Text = settings.User ?? string.Empty;
 		}
 
 		private void BtnDownloadClick(object sender, RoutedEventArgs e)

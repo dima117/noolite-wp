@@ -1,25 +1,16 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using Microsoft.Devices;
-using Microsoft.Phone.Controls;
-using NooliteSmartHome.Gateway;
 using NooliteSmartHome.Gateway.Configuration;
+using NooliteSmartHome.Helpers;
+using NooliteSmartHome.Model;
 
 namespace NooliteSmartHome.Pages
 {
-	public partial class MainPage : PhoneApplicationPage
+	public partial class MainPage
 	{
-		private Pr1132Configuration configuration;
-
 		// Constructor
 		public MainPage()
 		{
@@ -30,25 +21,38 @@ namespace NooliteSmartHome.Pages
 		{
 			base.OnNavigatedTo(e);
 
-			using (var isf = IsolatedStorageFile.GetUserStoreForApplication())
-			{
-				if (!isf.FileExists("noolite_settings.bin"))
-				{
-					EmptyTextBlock.Visibility = Visibility.Visible;
-					GroupList.Visibility = Visibility.Collapsed;
-				}
-				else
-				{
-					using (var stream = isf.OpenFile("noolite_settings.bin", FileMode.Open))
-					{
-						configuration = Pr1132Configuration.Deserialize(stream);
+			var config = ApplicationDataLoader.GetConfiguration();
 
-						var collection = new ObservableCollection<Pr1132ControlGroup>(configuration.Groups);
-						GroupList.DataContext = collection;
-					}
-				}
+			if (config == null)
+			{
+				EmptyTextBlock.Visibility = Visibility.Visible;
+				GroupList.Visibility = Visibility.Collapsed;
+			}
+			else
+			{
+				GroupList.DataContext = BuildGroupListModel(config);
 			}
 		}
+
+		private ObservableCollection<GroupModel> BuildGroupListModel(Pr1132Configuration config)
+		{
+			var collection = new ObservableCollection<GroupModel>();
+
+			for (int i = 0; i < config.Groups.Length; i++)
+			{
+				var group = config.Groups[i];
+
+				if (group.Enabled)
+				{
+					var model = new GroupModel(group, i);
+					collection.Add(model);
+				}
+			}
+
+			return collection;
+		}
+
+		#region navigation
 
 		private void BtnSettingsClick(object sender, EventArgs e)
 		{
@@ -62,14 +66,16 @@ namespace NooliteSmartHome.Pages
 
 		private void GroupListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			var group = GroupList.SelectedItem as Pr1132ControlGroup;
+			var group = GroupList.SelectedItem as GroupModel;
 
 			if (group != null)
 			{
-				string url = string.Format("/Pages/Group.xaml?msg={0}", group.Name);
+				string url = string.Format("/Pages/Group.xaml?index={0}", group.Index);
 				NavigationService.Navigate(new Uri(url, UriKind.Relative));
 			}
 		}
+
+		#endregion
 	}
 
 }
