@@ -37,7 +37,7 @@
 				</ListBox.ItemContainerStyle>
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						<local:GroupItem ChannelName="{Binding Name}" Margin="8" />
+						<local:GroupItem ChannelName="{Binding Name}" ChannelType="{Binding Type}" Margin="8" />
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>

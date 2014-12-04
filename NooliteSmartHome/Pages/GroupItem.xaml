@@ -10,33 +10,16 @@
 	Height="Auto"
     d:DesignHeight="260">
 
-	<Grid x:Name="LayoutRoot">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*"  />
-			<ColumnDefinition Width="Auto"  />
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-		</Grid.RowDefinitions>
-
-		<TextBlock x:Name="TbChannelName" Grid.Row="0" Grid.Column="0" Style="{StaticResource PhoneTextGroupHeaderStyle}" />
-		<TextBlock Grid.Row="1" Grid.Column="0" Text="Вкл"  Style="{StaticResource PhoneTextLargeStyle}"  />
-		<CheckBox Grid.Row="1" Grid.Column="1"></CheckBox>
-			
-
-		<StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+	<StackPanel>
+		<TextBlock x:Name="TbChannelName" Style="{StaticResource PhoneTextGroupHeaderStyle}" />
+		<StackPanel x:Name="PanelSlider" Orientation="Vertical">
 			<TextBlock Text="яркость" Style="{StaticResource PhoneTextSmallStyle}" />
 			<Slider Minimum="0" Maximum="100" Value="65" Background="{StaticResource PhoneChromeBrush}" ></Slider>
 		</StackPanel>
-		<StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
-			
-			Orientation="Horizontal">
+		<StackPanel x:Name="PanelLed" Orientation="Horizontal">
 			<Button Content="цвет"></Button>
 			<Button Content="перелив"></Button>
 			<Button Content="стоп" Width="132"></Button>
 		</StackPanel>
-	</Grid>
+	</StackPanel>
 </UserControl>
