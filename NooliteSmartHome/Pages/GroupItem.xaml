@@ -10,23 +10,22 @@
 	Height="Auto"
     d:DesignHeight="260">
 
-	<Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
+	<Grid x:Name="LayoutRoot">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"  />
-			<ColumnDefinition Width="100"  />
+			<ColumnDefinition Width="Auto"  />
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="42" />
-			<RowDefinition />
-			<RowDefinition />
-			<RowDefinition />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
-		<TextBlock
-			Grid.ColumnSpan="2" 
-			Style="{StaticResource PhoneTextGroupHeaderStyle}" Text="Спальня" />
+
+		<TextBlock x:Name="TbChannelName" Grid.Row="0" Grid.Column="0" Style="{StaticResource PhoneTextGroupHeaderStyle}" />
 		<TextBlock Grid.Row="1" Grid.Column="0" Text="Вкл"  Style="{StaticResource PhoneTextLargeStyle}"  />
 		<CheckBox Grid.Row="1" Grid.Column="1"></CheckBox>
-
+			
 
 		<StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
 			<TextBlock Text="яркость" Style="{StaticResource PhoneTextSmallStyle}" />
@@ -35,7 +34,7 @@
 		<StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
 			
 			Orientation="Horizontal">
-			<Button Content="изменить цвет"></Button>
+			<Button Content="цвет"></Button>
 			<Button Content="перелив"></Button>
 			<Button Content="стоп" Width="132"></Button>
 		</StackPanel>

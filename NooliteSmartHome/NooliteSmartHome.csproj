@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Model\ChannelModel.cs" />
+    <Compile Include="Model\GroupDetailsModel.cs" />
     <Compile Include="Model\GroupModel.cs" />
     <Compile Include="Pages\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>

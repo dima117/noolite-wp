@@ -4,10 +4,10 @@ namespace NooliteSmartHome.Model
 {
 	public class GroupModel
 	{
-		public GroupModel(Pr1132ControlGroup channel, int index)
+		public GroupModel(Pr1132ControlGroup group, int index)
 		{
 			Index = index;
-			Name = channel.Name;
+			Name = group.Name;
 		}
 
 		public int Index { get; set; }
