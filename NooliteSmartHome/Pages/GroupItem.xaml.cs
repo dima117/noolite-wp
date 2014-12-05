@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows;
 using NooliteSmartHome.Gateway;
 using NooliteSmartHome.Gateway.Configuration;
+using NooliteSmartHome.Helpers;
 using NooliteSmartHome.Resources;
 
 namespace NooliteSmartHome.Pages
@@ -100,18 +101,29 @@ namespace NooliteSmartHome.Pages
 
 		#endregion
 
-		public event Action<byte, GatewayCommand, byte> SendCommand;
+		public event EventHandler<SendCommandEventArgs> SendCommand;
 
-		protected virtual void OnSendCommand(byte channel, GatewayCommand command, byte brightness = 0)
+		protected virtual void OnSendCommand(GatewayCommand command, byte channel, byte brightness = 0)
 		{
 			var handler = SendCommand;
-			if (handler != null) handler(channel, command, brightness);
+			if (handler != null)
+			{
+				var args = new SendCommandEventArgs
+				{
+					command = command,
+					channel = channel,
+					brightness = brightness
+				};
+
+				handler(this, args);
+			}
 		}
 
 		private void Switcher_OnClick(object sender, RoutedEventArgs e)
 		{
 			var command = Switcher.IsChecked.GetValueOrDefault() ? GatewayCommand.On : GatewayCommand.Off;
-			OnSendCommand(Index, command);
+			OnSendCommand(command, Index);
 		}
+
 	}
 }

@@ -38,10 +38,10 @@
 				<ListBox.ItemTemplate>
 					<DataTemplate>
 						<local:GroupItem 
+							SendCommand="GroupItem_OnSendCommand"
 							ChannelName="{Binding Name}" 
 							ChannelType="{Binding Type}" 
 							Index="{Binding Index}" 
-							SendCommand="GroupItem_OnSendCommand"
 							Margin="8" />
 					</DataTemplate>
 				</ListBox.ItemTemplate>
