@@ -66,7 +66,13 @@ namespace NooliteSmartHome.Pages
 		private void GroupItem_OnSendCommand(object sender, SendCommandEventArgs e)
 		{
 			var gateway = new Pr1132Gateway("192.168.0.168");
-			gateway.SendCommand(e.command, e.channel, e.brightness);
+			gateway.SendCommand((byte)e.command, e.channel, e.brightness);
+		}
+
+		private void GroupItem_OnSendLedCommand(object sender, SendLedCommandEventArgs e)
+		{
+			var gateway = new Pr1132Gateway("192.168.0.168");
+			gateway.SendCommand((byte)e.command, e.channel, 0);
 		}
 	}
 }

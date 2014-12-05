@@ -8,4 +8,9 @@ namespace NooliteSmartHome.Helpers
 		public byte channel;
 		public byte brightness;
 	}
+	public class SendLedCommandEventArgs
+	{
+		public GatewayLedCommand command;
+		public byte channel;
+	}
 }

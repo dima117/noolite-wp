@@ -1,9 +1,6 @@
 ﻿using System;
-using System.IO;
-using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using NooliteSmartHome.Gateway.Configuration;
 
 namespace NooliteSmartHome.Gateway
@@ -16,25 +13,6 @@ namespace NooliteSmartHome.Gateway
 		public Pr1132Gateway(string host)
 		{
 			Host = new Uri("http://" + host);
-		}
-
-		public void SendCommand(GatewayCommand cmd, byte channel, byte level = 0)
-		{
-			var format = cmd == GatewayCommand.SetLevel ? CommandFormat.OneByteData : CommandFormat.Undefined;
-
-			SendCommandInternal((byte)cmd, channel, format, level);
-		}
-
-		public void SendLedCommand(
-			GatewayLedCommand cmd,
-			byte channel,
-			byte levelR = 0,
-			byte levelG = 0,
-			byte levelB = 0)
-		{
-			var format = cmd == GatewayLedCommand.SetLevel ? CommandFormat.FourByteData : CommandFormat.LED;
-
-			SendCommandInternal((byte)cmd, channel, format, levelR, levelG, levelB);
 		}
 
 		public async Task<Pr1132Configuration> LoadConfiguration()
@@ -103,27 +81,13 @@ namespace NooliteSmartHome.Gateway
 			await client.GetByteArrayAsync(url);
 		}
 
-		private void SendCommandInternal(
+		public void SendCommand(
 			byte cmd,
 			byte channel,
-			CommandFormat format,
-			byte level0 = 0,
-			byte level1 = 0,
-			byte level2 = 0)
+			byte level)
 		{
-			const string URL_FORMAT = "api.htm?cache={0}&ch={1}&cmd={2}";
-			var relativeUrl = string.Format(URL_FORMAT, DateTime.Now.Ticks, channel, cmd);
-
-			switch (format)
-			{
-				case CommandFormat.OneByteData:
-					relativeUrl += string.Format("&fmt={0}&d0={1}", (byte)format, level0);
-					break;
-				case CommandFormat.FourByteData:
-				case CommandFormat.LED:
-					relativeUrl += string.Format("&fmt={0}&d0={1}&d1={2}&d2={3}", (byte)format, level0, level1, level2);
-					break;
-			}
+			const string URL_FORMAT = "api.htm?cache={0}&ch={1}&cmd={2}&br={3}";
+			var relativeUrl = string.Format(URL_FORMAT, DateTime.Now.Ticks, channel, cmd, level);
 
 			var url = GetUrl(relativeUrl);
 			SendRequest(url);

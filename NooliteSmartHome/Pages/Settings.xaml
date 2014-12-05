@@ -14,8 +14,8 @@
     shell:SystemTray.IsVisible="True">
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save"/>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="SaveButton_OnClick"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel" Click="CancelButton_OnClick"/>
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 
@@ -35,13 +35,9 @@
 		<!--ContentPanel - place additional content here-->
 		<Grid x:Name="ContentPanel" Grid.Row="1">
 			<StackPanel Margin="8">
-				<TextBlock Text="{Binding Path=LocalizedResources.SettingsHostLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
+				<TextBlock Text="{Binding Path=LocalizedResources.SettingsHostLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
 				<TextBox x:Name="TbGatewayHost"></TextBox>
-				<TextBlock Text="{Binding Path=LocalizedResources.SettingsUserLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
-				<TextBox x:Name="TbGatewayUser"></TextBox>
-				<TextBlock Text="{Binding Path=LocalizedResources.SettingsPasswordLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
-				<PasswordBox x:Name="TbGatewayPassword"></PasswordBox>
-				<Button Content="download" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDownloadClick"/>
+				<Button Content="синхронизировать" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDownloadClick"/>
 			</StackPanel>
 
 	

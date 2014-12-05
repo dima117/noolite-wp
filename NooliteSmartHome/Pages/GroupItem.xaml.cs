@@ -103,6 +103,22 @@ namespace NooliteSmartHome.Pages
 		#endregion
 
 		public event EventHandler<SendCommandEventArgs> SendCommand;
+		public event EventHandler<SendLedCommandEventArgs> SendLedCommand;
+
+		protected virtual void OnSendLedCommand(GatewayLedCommand command, byte channel)
+		{
+			var handler = SendLedCommand;
+			if (handler != null)
+			{
+				var args = new SendLedCommandEventArgs
+				{
+					command = command,
+					channel = channel
+				};
+
+				handler(this, args);
+			}
+		}
 
 		protected virtual void OnSendCommand(GatewayCommand command, byte channel, byte brightness = 0)
 		{
@@ -128,9 +144,32 @@ namespace NooliteSmartHome.Pages
 
 		private void UIElement_OnManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
 		{
-			var level = (byte)(Slider.Value + 55);
+			OnSendCommand(GatewayCommand.SetLevel, Index, (byte)Slider.Value);
+		}
 
-			OnSendCommand(GatewayCommand.SetLevel, Index, level);
+		private void ApplyButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			OnSendCommand(GatewayCommand.LoadState, Index);
+		}
+
+		private void SaveStateButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			OnSendCommand(GatewayCommand.SaveState, Index);
+		}
+
+		private void ChangeColorButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			OnSendLedCommand(GatewayLedCommand.ChangeColor, Index);
+		}
+
+		private void StartColorChangingButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			OnSendLedCommand(GatewayLedCommand.Start, Index);
+		}
+
+		private void StopColorChangingButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			OnSendLedCommand(GatewayLedCommand.Stop, Index);
 		}
 	}
 }

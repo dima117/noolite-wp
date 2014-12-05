@@ -30,5 +30,9 @@ namespace NooliteSmartHome.Helpers
 		{
 			return config ?? ReloadConfiguration();
 		}
+		public static Pr1132Configuration ClearCachedConfiguration()
+		{
+			return config = null;
+		}
 	}
 }

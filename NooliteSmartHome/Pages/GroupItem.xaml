@@ -18,15 +18,15 @@
 			<Slider x:Name="Slider" Minimum="0" Maximum="100" Value="65" Background="{StaticResource PhoneChromeBrush}" ManipulationCompleted="UIElement_OnManipulationCompleted" />
 		</StackPanel>
 		<StackPanel x:Name="PanelLed" Orientation="Horizontal">
-			<Button Content="цвет"></Button>
-			<Button Content="перелив"></Button>
-			<Button Content="стоп" Width="132"></Button>
+			<Button Content="цвет" Click="ChangeColorButton_OnClick"></Button>
+			<Button Content="перелив" Click="StartColorChangingButton_OnClick"></Button>
+			<Button Content="стоп" Width="132" Click="StopColorChangingButton_OnClick"></Button>
 		</StackPanel>
 		<StackPanel x:Name="PanelScene" Orientation="Vertical">
 			<TextBlock x:Name="LabelScene" Style="{StaticResource PhoneTextSmallStyle}" />
 			<StackPanel Orientation="Horizontal">
-				<Button Content="применить"></Button>
-				<Button Content="сохранить"></Button>
+				<Button Content="применить" Click="ApplyButton_OnClick"/>
+				<Button Content="сохранить" Click="SaveStateButton_OnClick" />
 			</StackPanel>
 		</StackPanel>
 	</StackPanel>
