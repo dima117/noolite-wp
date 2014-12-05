@@ -10,6 +10,7 @@ namespace NooliteSmartHome.Gateway
 {
 	public class Pr1132Gateway
 	{
+		private static readonly HttpClient client = new HttpClient();
 		public Uri Host { get; private set; }
 
 		public Pr1132Gateway(string host)
@@ -99,7 +100,6 @@ namespace NooliteSmartHome.Gateway
 
 		private async void SendRequest(Uri url)
 		{
-			var client = new HttpClient();
 			await client.GetByteArrayAsync(url);
 		}
 

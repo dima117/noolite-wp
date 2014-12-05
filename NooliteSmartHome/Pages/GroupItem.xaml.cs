@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using NooliteSmartHome.Gateway;
 using NooliteSmartHome.Gateway.Configuration;
 using NooliteSmartHome.Helpers;
@@ -125,5 +126,11 @@ namespace NooliteSmartHome.Pages
 			OnSendCommand(command, Index);
 		}
 
+		private void UIElement_OnManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
+		{
+			var level = (byte)(Slider.Value + 55);
+
+			OnSendCommand(GatewayCommand.SetLevel, Index, level);
+		}
 	}
 }
