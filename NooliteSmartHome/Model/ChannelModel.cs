@@ -4,14 +4,14 @@ namespace NooliteSmartHome.Model
 {
 	public class ChannelModel
 	{
-		public ChannelModel(Pr1132Channel channel, int index)
+		public ChannelModel(Pr1132Channel channel, byte index)
 		{
 			Index = index;
 			Name = channel.Name;
 			Type = channel.Type;
 		}
 
-		public int Index { get; set; }
+		public byte Index { get; set; }
 
 		public string Name { get; set; }
 

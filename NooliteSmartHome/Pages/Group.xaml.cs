@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
+using NooliteSmartHome.Gateway;
 using NooliteSmartHome.Gateway.Configuration;
 using NooliteSmartHome.Helpers;
 using NooliteSmartHome.Model;
@@ -38,7 +39,7 @@ namespace NooliteSmartHome.Pages
 				if (channelNumber.HasValue)
 				{
 					var channel = config.Channels[channelNumber.Value];
-					var channelModel = new ChannelModel(channel, channelNumber.Value);
+					var channelModel = new ChannelModel(channel, (byte)channelNumber.Value);
 					groupModel.Channels.Add(channelModel);
 				}
 			}
@@ -60,6 +61,12 @@ namespace NooliteSmartHome.Pages
 			}
 
 			throw new ArgumentException();
+		}
+
+		private void GroupItem_OnSendCommand(byte channel, GatewayCommand command, byte brightness)
+		{
+			var gateway = new Pr1132Gateway("192.168.0.168");
+			gateway.SendCommand(command, channel, brightness);
 		}
 	}
 }

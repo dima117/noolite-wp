@@ -12,7 +12,7 @@
     d:DesignHeight="260">
 
 	<StackPanel>
-		<toolkit:ToggleSwitch x:Name="Switcher" />
+		<toolkit:ToggleSwitch x:Name="Switcher" Click="Switcher_OnClick" />
 		<StackPanel x:Name="PanelSlider" Orientation="Vertical">
 			<TextBlock x:Name="LabelSlider" Style="{StaticResource PhoneTextSmallStyle}" />
 			<Slider Minimum="0" Maximum="100" Value="65" Background="{StaticResource PhoneChromeBrush}" ></Slider>

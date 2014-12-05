@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows;
+using NooliteSmartHome.Gateway;
 using NooliteSmartHome.Gateway.Configuration;
 using NooliteSmartHome.Resources;
 
@@ -84,5 +86,32 @@ namespace NooliteSmartHome.Pages
 		}
 
 		#endregion
+
+		#region index
+
+		public static readonly DependencyProperty IndexProperty =
+			DependencyProperty.Register("Index", typeof(byte), typeof(GroupItem), new PropertyMetadata(default(byte)));
+
+		public byte Index
+		{
+			get { return (byte)GetValue(IndexProperty); }
+			set { SetValue(IndexProperty, value); }
+		}
+
+		#endregion
+
+		public event Action<byte, GatewayCommand, byte> SendCommand;
+
+		protected virtual void OnSendCommand(byte channel, GatewayCommand command, byte brightness = 0)
+		{
+			var handler = SendCommand;
+			if (handler != null) handler(channel, command, brightness);
+		}
+
+		private void Switcher_OnClick(object sender, RoutedEventArgs e)
+		{
+			var command = Switcher.IsChecked.GetValueOrDefault() ? GatewayCommand.On : GatewayCommand.Off;
+			OnSendCommand(Index, command);
+		}
 	}
 }

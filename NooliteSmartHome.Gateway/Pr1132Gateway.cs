@@ -39,10 +39,9 @@ namespace NooliteSmartHome.Gateway
 		public async Task<Pr1132Configuration> LoadConfiguration()
 		{
 			var url = GetUrl("noolite_settings.bin");
-			url = new Uri("http://thinking-home.ru");
-
+			
 			var client = new HttpClient();
-
+			
 			using (var stream = await client.GetStreamAsync(url))
 			{
 				return Pr1132Configuration.Deserialize(stream);
@@ -98,6 +97,12 @@ namespace NooliteSmartHome.Gateway
 			return new Uri(Host, relativeUrl);
 		}
 
+		private async void SendRequest(Uri url)
+		{
+			var client = new HttpClient();
+			await client.GetByteArrayAsync(url);
+		}
+
 		private void SendCommandInternal(
 			byte cmd,
 			byte channel,
@@ -121,9 +126,7 @@ namespace NooliteSmartHome.Gateway
 			}
 
 			var url = GetUrl(relativeUrl);
-
-			var client = new WebClient();
-			client.DownloadStringAsync(url);
+			SendRequest(url);
 		}
 	}
 }
