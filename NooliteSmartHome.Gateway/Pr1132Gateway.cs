@@ -111,8 +111,8 @@ namespace NooliteSmartHome.Gateway
 			byte level1 = 0,
 			byte level2 = 0)
 		{
-			const string URL_FORMAT = "api.htm?ch={0}&cmd={1}";
-			var relativeUrl = string.Format(URL_FORMAT, channel, cmd);
+			const string URL_FORMAT = "api.htm?cache={0}&ch={1}&cmd={2}";
+			var relativeUrl = string.Format(URL_FORMAT, DateTime.Now.Ticks, channel, cmd);
 
 			switch (format)
 			{
