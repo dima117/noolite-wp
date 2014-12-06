@@ -18,7 +18,7 @@ namespace NooliteSmartHome.Pages
 
 		private void FillData()
 		{
-			var settings = ApplicationSettings.Current;
+			var settings = ApplicationData.Current;
 			TbGatewayHost.Text = settings.Host ?? string.Empty;
 		}
 
@@ -33,15 +33,9 @@ namespace NooliteSmartHome.Pages
 			var url = string.Format("http://192.168.0.168/noolite_settings.bin?cache={0}", DateTime.Now.Ticks);
 			var buf = await client.GetByteArrayAsync(url);
 
-			using (var isf = IsolatedStorageFile.GetUserStoreForApplication())
-			{
-				using (var stream = isf.OpenFile("noolite_settings.bin", FileMode.OpenOrCreate))
-				{
-					stream.Write(buf, 0, buf.Length);
-					ApplicationDataLoader.ClearCachedConfiguration();
-					MessageBox.Show("Настройки загружены");
-				}
-			}
+			var cfg = ApplicationData.SaveConfiguration(buf);
+			var msg = cfg == null ? "Ошибка при синхронизации!" : "Настройки загружены";
+			MessageBox.Show(msg);
 		}
 
 		private void CancelButton_OnClick(object sender, EventArgs e)
@@ -51,8 +45,8 @@ namespace NooliteSmartHome.Pages
 
 		private void SaveButton_OnClick(object sender, EventArgs e)
 		{
-			ApplicationSettings.Current.Host = TbGatewayHost.Text;
-			ApplicationSettings.SaveCurrentSettings();
+			ApplicationData.Current.Host = TbGatewayHost.Text;
+			ApplicationData.SaveCurrentSettings();
 
 			UpdateSettings();
 			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));

@@ -119,7 +119,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\ApplicationDataLoader.cs" />
+    <Compile Include="Helpers\ApplicationData.cs" />
     <Compile Include="Helpers\ApplicationSettings.cs" />
     <Compile Include="TiltEffect.cs" />
   </ItemGroup>
@@ -173,7 +173,10 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Groups\AlternativeBulb.png" />
     <Content Include="Assets\Groups\Bulb.png" />
+    <Content Include="Assets\Groups\EnergySavingBulb.png" />
+    <Content Include="Assets\Groups\NightLamp.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

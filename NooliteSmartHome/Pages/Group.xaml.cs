@@ -21,7 +21,7 @@ namespace NooliteSmartHome.Pages
 			base.OnNavigatedTo(e);
 
 			var index = GetGroupIndex();
-			var config = ApplicationDataLoader.GetConfiguration();
+			var config = ApplicationData.GetConfiguration();
 
 			var model = BuildGroupModel(config, index);
 

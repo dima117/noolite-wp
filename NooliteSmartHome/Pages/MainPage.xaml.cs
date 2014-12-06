@@ -21,7 +21,7 @@ namespace NooliteSmartHome.Pages
 		{
 			base.OnNavigatedTo(e);
 
-			var config = ApplicationDataLoader.GetConfiguration();
+			var config = ApplicationData.GetConfiguration();
 
 			if (config == null)
 			{
