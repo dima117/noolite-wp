@@ -4,6 +4,7 @@ using System.IO.IsolatedStorage;
 using System.Net.Http;
 using System.Windows;
 using Microsoft.Phone.Controls;
+using NooliteSmartHome.Gateway;
 using NooliteSmartHome.Helpers;
 
 namespace NooliteSmartHome.Pages
@@ -29,9 +30,8 @@ namespace NooliteSmartHome.Pages
 
 		public async void UpdateSettings()
 		{
-			var client = new HttpClient();
-			var url = string.Format("http://192.168.0.168/noolite_settings.bin?cache={0}", DateTime.Now.Ticks);
-			var buf = await client.GetByteArrayAsync(url);
+			var gateway = new Pr1132Gateway("192.168.0.168");
+			var buf = await gateway.LoadConfigurationAsync();
 
 			var cfg = ApplicationData.SaveConfiguration(buf);
 			var msg = cfg == null ? "Ошибка при синхронизации!" : "Настройки загружены";

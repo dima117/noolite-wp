@@ -83,7 +83,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CommandFormat.cs" />
     <Compile Include="Configuration\Pr1132Channel.cs" />
     <Compile Include="Configuration\Pr1132ChannelType.cs" />
     <Compile Include="Configuration\Pr1132Configuration.cs" />
