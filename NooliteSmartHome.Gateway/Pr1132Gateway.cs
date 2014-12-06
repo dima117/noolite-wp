@@ -2,7 +2,6 @@
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using NooliteSmartHome.Gateway.Configuration;
 
 namespace NooliteSmartHome.Gateway
 {
@@ -46,7 +45,8 @@ namespace NooliteSmartHome.Gateway
 
 		public async Task<byte[]> LoadConfigurationAsync()
 		{
-			return await SendRequest("noolite_settings.bin");
+			var url = string.Format("noolite_settings.bin?cache={0}", DateTime.Now.Ticks);
+			return await SendRequest(url);
 		}
 
 		public async void SendCommandAsync(
