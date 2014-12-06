@@ -17,17 +17,26 @@
 			<TextBlock x:Name="LabelSlider" Style="{StaticResource PhoneTextSmallStyle}" />
 			<Slider x:Name="Slider" Minimum="0" Maximum="100" Value="65" Background="{StaticResource PhoneChromeBrush}" ManipulationCompleted="UIElement_OnManipulationCompleted" />
 		</StackPanel>
-		<StackPanel x:Name="PanelLed" Orientation="Horizontal">
-			<Button Content="цвет" Click="ChangeColorButton_OnClick"></Button>
-			<Button Content="перелив" Click="StartColorChangingButton_OnClick"></Button>
-			<Button Content="стоп" Width="132" Click="StopColorChangingButton_OnClick"></Button>
-		</StackPanel>
+		<Grid x:Name="PanelLed">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.6*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Button Grid.Column="0" Content="цвет" HorizontalAlignment="Stretch" Click="ChangeColorButton_OnClick" />
+			<Button Grid.Column="1" Content="перелив" HorizontalAlignment="Stretch" Click="StartColorChangingButton_OnClick" />
+			<Button Grid.Column="2" Content="стоп" HorizontalAlignment="Stretch" Click="StopColorChangingButton_OnClick" />
+		</Grid>
 		<StackPanel x:Name="PanelScene" Orientation="Vertical">
 			<TextBlock x:Name="LabelScene" Style="{StaticResource PhoneTextSmallStyle}" />
-			<StackPanel Orientation="Horizontal">
-				<Button Content="применить" Click="ApplyButton_OnClick"/>
-				<Button Content="сохранить" Click="SaveStateButton_OnClick" />
-			</StackPanel>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1.6*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Button Grid.Column="0" Content="применить" HorizontalAlignment="Stretch" Click="ApplyButton_OnClick" />
+				<Button Grid.Column="1" Content="сохранить" HorizontalAlignment="Stretch" Click="SaveStateButton_OnClick" />
+			</Grid>
 		</StackPanel>
 	</StackPanel>
 </UserControl>
