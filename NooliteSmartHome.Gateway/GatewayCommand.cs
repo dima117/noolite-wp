@@ -15,5 +15,11 @@
 
         Bind = 0x0f,
         UnBind = 0x09,
+
+		LedStop = 0x0a,				// 10
+		LedStart = 0x10,			// 16
+		LedChangeColor = 0x11,		// 17
+		LedSetColorMode = 0x12,		// 18
+		LedSetColorSpeed = 0x13		// 19
     }
 }

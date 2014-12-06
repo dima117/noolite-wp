@@ -103,22 +103,6 @@ namespace NooliteSmartHome.Pages
 		#endregion
 
 		public event EventHandler<SendCommandEventArgs> SendCommand;
-		public event EventHandler<SendLedCommandEventArgs> SendLedCommand;
-
-		protected virtual void OnSendLedCommand(GatewayLedCommand command, byte channel)
-		{
-			var handler = SendLedCommand;
-			if (handler != null)
-			{
-				var args = new SendLedCommandEventArgs
-				{
-					command = command,
-					channel = channel
-				};
-
-				handler(this, args);
-			}
-		}
 
 		protected virtual void OnSendCommand(GatewayCommand command, byte channel, byte brightness = 0)
 		{
@@ -159,17 +143,17 @@ namespace NooliteSmartHome.Pages
 
 		private void ChangeColorButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			OnSendLedCommand(GatewayLedCommand.ChangeColor, Index);
+			OnSendCommand(GatewayCommand.LedChangeColor, Index);
 		}
 
 		private void StartColorChangingButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			OnSendLedCommand(GatewayLedCommand.Start, Index);
+			OnSendCommand(GatewayCommand.LedStart, Index);
 		}
 
 		private void StopColorChangingButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			OnSendLedCommand(GatewayLedCommand.Stop, Index);
+			OnSendCommand(GatewayCommand.LedStop, Index);
 		}
 	}
 }

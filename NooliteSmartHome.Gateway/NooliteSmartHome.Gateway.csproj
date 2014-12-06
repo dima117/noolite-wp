@@ -95,7 +95,6 @@
     <Compile Include="Encodings\BaseSingleByteEncoding.cs" />
     <Compile Include="Encodings\Windows1251Encoding.cs" />
     <Compile Include="GatewayCommand.cs" />
-    <Compile Include="GatewayLedCommand.cs" />
     <Compile Include="Pr1132Gateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

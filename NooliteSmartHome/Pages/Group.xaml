@@ -39,7 +39,6 @@
 					<DataTemplate>
 						<local:GroupItem 
 							SendCommand="GroupItem_OnSendCommand"
-							SendLedCommand="GroupItem_OnSendLedCommand"
 							ChannelName="{Binding Name}" 
 							ChannelType="{Binding Type}" 
 							Index="{Binding Index}" 
