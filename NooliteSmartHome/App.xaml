@@ -12,7 +12,6 @@
     	<System:String x:Key="BtnSettings">settings</System:String>
     	<System:String x:Key="BtnAbout">about</System:String>
     </Application.Resources>
-
     <Application.ApplicationLifetimeObjects>
         <!--Required object that handles lifetime events for the application-->
         <shell:PhoneApplicationService
