@@ -19,8 +19,6 @@ namespace NooliteSmartHome.Pages
 
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
-			base.OnNavigatedTo(e);
-
 			var config = ApplicationData.GetConfiguration();
 
 			if (config == null)

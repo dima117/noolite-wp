@@ -1,55 +1,71 @@
 ﻿using System;
-using System.IO;
-using System.IO.IsolatedStorage;
-using System.Net.Http;
 using System.Windows;
-using Microsoft.Phone.Controls;
-using NooliteSmartHome.Gateway;
+using System.Windows.Navigation;
+using Microsoft.Phone.Shell;
 using NooliteSmartHome.Helpers;
 
 namespace NooliteSmartHome.Pages
 {
-	public partial class Settings : PhoneApplicationPage
+	public partial class Settings
 	{
 		public Settings()
 		{
 			InitializeComponent();
-			FillData();
 		}
 
-		private void FillData()
+		#region load
+
+		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
-			var settings = ApplicationData.Current;
+			var settings = ApplicationData.Settings;
 			TbGatewayHost.Text = settings.Host ?? string.Empty;
 		}
 
-		private void BtnDownloadClick(object sender, RoutedEventArgs e)
+		#endregion
+
+		#region save
+
+		private void SaveSettings()
 		{
-			UpdateSettings();
+			ApplicationData.Settings.Host = TbGatewayHost.Text;
+			ApplicationData.SaveCurrentSettings();
 		}
 
-		public async void UpdateSettings()
+		private async void UpdateConfiguration()
 		{
-			var gateway = new Pr1132Gateway("192.168.0.168");
+			SystemTray.ProgressIndicator.IsVisible = true;
+
+			var gateway = ApplicationData.Settings.CreateGateway();
+
 			var buf = await gateway.LoadConfigurationAsync();
 
+			SystemTray.ProgressIndicator.IsVisible = false;
+
 			var cfg = ApplicationData.SaveConfiguration(buf);
-			var msg = cfg == null ? "Ошибка при синхронизации!" : "Настройки загружены";
-			MessageBox.Show(msg);
+
+			if (cfg == null)
+			{
+				MessageBox.Show("Ошибка при синхронизации!");
+			}
+			
+			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
 		}
+
+		private void SaveButton_OnClick(object sender, EventArgs e)
+		{
+			SaveSettings();
+			UpdateConfiguration();
+		}
+
+		#endregion
+
+		#region cancel
 
 		private void CancelButton_OnClick(object sender, EventArgs e)
 		{
 			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
 		}
 
-		private void SaveButton_OnClick(object sender, EventArgs e)
-		{
-			ApplicationData.Current.Host = TbGatewayHost.Text;
-			ApplicationData.SaveCurrentSettings();
-
-			UpdateSettings();
-			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
-		}
+		#endregion
 	}
 }

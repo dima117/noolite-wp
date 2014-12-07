@@ -69,7 +69,7 @@ namespace NooliteSmartHome.Helpers
 		private const string KEY = "12F164FB-8BF4-4E70-8F3B-74E22BC1DE75";
 		private static readonly IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
 
-		public static ApplicationSettings Current
+		public static ApplicationSettings Settings
 		{
 			get
 			{
@@ -90,7 +90,7 @@ namespace NooliteSmartHome.Helpers
 
 		public static void SaveCurrentSettings()
 		{
-			settings[KEY] = Current;
+			settings[KEY] = Settings;
 			settings.Save();
 		}
 

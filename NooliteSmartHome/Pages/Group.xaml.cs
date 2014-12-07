@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using NooliteSmartHome.Gateway;
 using NooliteSmartHome.Gateway.Configuration;
 using NooliteSmartHome.Helpers;
 using NooliteSmartHome.Model;
@@ -65,8 +63,10 @@ namespace NooliteSmartHome.Pages
 
 		private void GroupItem_OnSendCommand(object sender, SendCommandEventArgs e)
 		{
-			var gateway = new Pr1132Gateway("192.168.0.168");
-			gateway.SendCommandAsync(e.command, e.channel, e.brightness);
+			ApplicationData
+				.Settings
+				.CreateGateway()
+				.SendCommandAsync(e.command, e.channel, e.brightness);
 		}
 	}
 }

@@ -19,6 +19,12 @@
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 
+	<shell:SystemTray.ProgressIndicator>
+		<shell:ProgressIndicator IsIndeterminate="True" 
+                                 IsVisible="False" 
+                                 Text="идет обновление конфигурации" />
+	</shell:SystemTray.ProgressIndicator>
+
 	<!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Transparent">
 		<Grid.RowDefinitions>
@@ -37,7 +43,6 @@
 			<StackPanel Margin="8">
 				<TextBlock Text="{Binding Path=LocalizedResources.SettingsHostLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
 				<TextBox x:Name="TbGatewayHost"></TextBox>
-				<Button Content="синхронизировать" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDownloadClick"/>
 			</StackPanel>
 
 	
