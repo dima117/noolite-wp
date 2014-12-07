@@ -5,7 +5,7 @@
     <Language code="ru" />
     <Language code="en" />
   </Languages>
-  <App xmlns="" ProductID="{6ab95d63-f545-4866-bb66-0633a531d9e1}" Title="nooLite Smart Home" RuntimeType="Silverlight" Version="1.0.0.1" Genre="apps.normal" Author="NooliteSmartHome author" Description="Sample description" Publisher="NooliteSmartHome" PublisherID="{814994bb-fd15-4836-8d38-914d626c9ad1}">
+  <App xmlns="" ProductID="{6ab95d63-f545-4866-bb66-0633a531d9e1}" Title="nooLite Smart Home" RuntimeType="Silverlight" Version="1.0.0.3" Genre="apps.normal" Author="Dmitry Andriyanov" Description="Sample description" Publisher="Thinking-Home.RU" PublisherID="{814994bb-fd15-4836-8d38-914d626c9ad1}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
