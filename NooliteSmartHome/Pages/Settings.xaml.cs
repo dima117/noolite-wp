@@ -36,18 +36,23 @@ namespace NooliteSmartHome.Pages
 			SystemTray.ProgressIndicator.IsVisible = true;
 
 			var gateway = ApplicationData.Settings.CreateGateway();
-
 			var buf = await gateway.LoadConfigurationAsync();
 
-			SystemTray.ProgressIndicator.IsVisible = false;
+			if (buf != null)
+			{
+				var cfg = ApplicationData.SaveConfiguration(buf);
 
-			var cfg = ApplicationData.SaveConfiguration(buf);
-
-			if (cfg == null)
+				if (cfg == null)
+				{
+					MessageBox.Show("Ошибка при синхронизации!");
+				}
+			}
+			else
 			{
 				MessageBox.Show("Ошибка при синхронизации!");
 			}
-			
+
+			SystemTray.ProgressIndicator.IsVisible = false;
 			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
 		}
 

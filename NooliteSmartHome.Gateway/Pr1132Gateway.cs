@@ -38,7 +38,18 @@ namespace NooliteSmartHome.Gateway
 
 		private async Task<byte[]> SendRequest(string url)
 		{
-			return await client.GetByteArrayAsync(url);
+			byte[] result;
+
+			try
+			{
+				result = await client.GetByteArrayAsync(url);
+			}
+			catch
+			{
+				result = null;
+			}
+
+			return result;
 		}
 
 		#endregion
