@@ -19,6 +19,14 @@ namespace NooliteSmartHome.Pages
 		{
 			var settings = ApplicationData.Settings;
 			TbGatewayHost.Text = settings.Host ?? string.Empty;
+			CbUseAuth.IsChecked = settings.AuthInfo != null;
+
+			if (settings.AuthInfo != null)
+			{
+				TbLogin.Text = settings.AuthInfo.User;
+				TbPassword.Text = settings.AuthInfo.Password;
+				PanelAuth.Visibility = Visibility.Visible;
+			}
 		}
 
 		#endregion
@@ -28,6 +36,20 @@ namespace NooliteSmartHome.Pages
 		private void SaveSettings()
 		{
 			ApplicationData.Settings.Host = TbGatewayHost.Text;
+
+			if (CbUseAuth.IsChecked.GetValueOrDefault())
+			{
+				ApplicationData.Settings.AuthInfo = new AuthInfo
+				{
+					User = TbLogin.Text,
+					Password = TbPassword.Text
+				};
+			}
+			else
+			{
+				ApplicationData.Settings.AuthInfo = null;
+			}
+
 			ApplicationData.SaveCurrentSettings();
 		}
 
@@ -72,5 +94,11 @@ namespace NooliteSmartHome.Pages
 		}
 
 		#endregion
+
+		private void AuthFieldsIsVisible_OnClick(object sender, RoutedEventArgs e)
+		{
+			PanelAuth.Visibility = CbUseAuth.IsChecked.GetValueOrDefault() 
+				? Visibility.Visible : Visibility.Collapsed;
+		}
 	}
 }

@@ -43,9 +43,14 @@
 			<StackPanel Margin="8">
 				<TextBlock Text="{Binding Path=LocalizedResources.SettingsHostLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
 				<TextBox x:Name="TbGatewayHost"></TextBox>
+				<CheckBox x:Name="CbUseAuth" Content="Аутентификация" Click="AuthFieldsIsVisible_OnClick" />
+				<StackPanel x:Name="PanelAuth" Visibility="Collapsed">
+					<TextBlock Text="Логин" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
+					<TextBox x:Name="TbLogin"></TextBox>
+					<TextBlock Text="Пароль" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
+					<TextBox x:Name="TbPassword"></TextBox>
+				</StackPanel>
 			</StackPanel>
-
-	
 		</Grid>
 	</Grid>
 
