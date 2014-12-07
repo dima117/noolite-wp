@@ -158,5 +158,23 @@ namespace NooliteSmartHome.Resources {
                 return ResourceManager.GetString("SettingsUserLabel", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Off.
+        /// </summary>
+        public static string ToggleSwitcherOff {
+            get {
+                return ResourceManager.GetString("ToggleSwitcherOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On.
+        /// </summary>
+        public static string ToggleSwitcherOn {
+            get {
+                return ResourceManager.GetString("ToggleSwitcherOn", resourceCulture);
+            }
+        }
     }
 }

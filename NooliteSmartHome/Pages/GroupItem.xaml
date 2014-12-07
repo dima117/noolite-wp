@@ -12,7 +12,8 @@
     d:DesignHeight="260">
 
 	<StackPanel>
-		<toolkit:ToggleSwitch x:Name="Switcher" Click="Switcher_OnClick" />
+		<toolkit:ToggleSwitch x:Name="Switcher" Checked="Switcher_OnChecked" Unchecked="Switcher_OnUnchecked"
+			Content="{Binding Path=LocalizedResources.ToggleSwitcherOff, Source={StaticResource LocalizedStrings}}" />
 		<StackPanel x:Name="PanelSlider" Orientation="Vertical">
 			<TextBlock x:Name="LabelSlider" Style="{StaticResource PhoneTextSmallStyle}" />
 			<Slider x:Name="Slider" Minimum="0" Maximum="100" Value="65" Background="{StaticResource PhoneChromeBrush}" ManipulationCompleted="UIElement_OnManipulationCompleted" />

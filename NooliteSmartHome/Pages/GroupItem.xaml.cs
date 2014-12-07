@@ -120,12 +120,6 @@ namespace NooliteSmartHome.Pages
 			}
 		}
 
-		private void Switcher_OnClick(object sender, RoutedEventArgs e)
-		{
-			var command = Switcher.IsChecked.GetValueOrDefault() ? GatewayCommand.On : GatewayCommand.Off;
-			OnSendCommand(command, Index);
-		}
-
 		private void UIElement_OnManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
 		{
 			OnSendCommand(GatewayCommand.SetLevel, Index, (byte)Slider.Value);
@@ -154,6 +148,18 @@ namespace NooliteSmartHome.Pages
 		private void StopColorChangingButton_OnClick(object sender, RoutedEventArgs e)
 		{
 			OnSendCommand(GatewayCommand.LedStop, Index);
+		}
+
+		private void Switcher_OnChecked(object sender, RoutedEventArgs e)
+		{
+			Switcher.Content = AppResources.ToggleSwitcherOn;
+			OnSendCommand(GatewayCommand.On, Index);
+		}
+
+		private void Switcher_OnUnchecked(object sender, RoutedEventArgs e)
+		{
+			Switcher.Content = AppResources.ToggleSwitcherOff;
+			OnSendCommand(GatewayCommand.Off, Index);
 		}
 	}
 }

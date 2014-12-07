@@ -152,4 +152,10 @@
   <data name="SettingsUserLabel" xml:space="preserve">
     <value>Логин</value>
   </data>
+  <data name="ToggleSwitcherOff" xml:space="preserve">
+    <value>Выкл.</value>
+  </data>
+  <data name="ToggleSwitcherOn" xml:space="preserve">
+    <value>Вкл.</value>
+  </data>
 </root>
