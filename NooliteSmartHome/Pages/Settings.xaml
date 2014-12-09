@@ -20,9 +20,7 @@
 	</phone:PhoneApplicationPage.ApplicationBar>
 
 	<shell:SystemTray.ProgressIndicator>
-		<shell:ProgressIndicator IsIndeterminate="True" 
-                                 IsVisible="False" 
-                                 Text="идет обновление конфигурации" />
+		<shell:ProgressIndicator IsVisible="False" />
 	</shell:SystemTray.ProgressIndicator>
 
 	<!--LayoutRoot is the root grid where all page content is placed-->

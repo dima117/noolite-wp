@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Microsoft.Phone.Shell;
 using NooliteSmartHome.Gateway.Configuration;
 using NooliteSmartHome.Helpers;
 using NooliteSmartHome.Model;
@@ -50,6 +51,37 @@ namespace NooliteSmartHome.Pages
 			return collection;
 		}
 
+		// todo: дублирование кода на странице настроек
+		private async void UpdateConfiguration()
+		{
+			SystemTray.ProgressIndicator.Text = "идет обновление конфигурации";
+			SystemTray.ProgressIndicator.IsIndeterminate = true;
+			SystemTray.ProgressIndicator.IsVisible = true;
+
+			var gateway = ApplicationData.Settings.CreateGateway();
+			var buf = await gateway.LoadConfigurationAsync();
+
+			if (buf != null)
+			{
+				var cfg = ApplicationData.SaveConfiguration(buf);
+
+				if (cfg == null)
+				{
+					MessageBox.Show("Ошибка при синхронизации!");
+				}
+				else
+				{
+					MessageBox.Show("Синхронизация прошла успешно");
+				}
+			}
+			else
+			{
+				MessageBox.Show("Ошибка при синхронизации!");
+			}
+
+			SystemTray.ProgressIndicator.IsVisible = false;
+		}
+
 		#region navigation
 
 		private void BtnSettingsClick(object sender, EventArgs e)
@@ -74,6 +106,11 @@ namespace NooliteSmartHome.Pages
 		}
 
 		#endregion
+
+		private void BtnSyncClick(object sender, EventArgs e)
+		{
+			UpdateConfiguration();
+		}
 	}
 
 }

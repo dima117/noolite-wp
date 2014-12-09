@@ -55,6 +55,8 @@ namespace NooliteSmartHome.Pages
 
 		private async void UpdateConfiguration()
 		{
+			SystemTray.ProgressIndicator.Text = "идет обновление конфигурации";
+			SystemTray.ProgressIndicator.IsIndeterminate = true;
 			SystemTray.ProgressIndicator.IsVisible = true;
 
 			var gateway = ApplicationData.Settings.CreateGateway();
