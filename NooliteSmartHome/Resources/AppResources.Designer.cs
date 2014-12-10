@@ -79,20 +79,83 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to apply.
+        /// </summary>
+        public static string GroupItemApplyState {
+            get {
+                return ResourceManager.GetString("GroupItemApplyState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to brightness.
         /// </summary>
-        public static string GroupBrightness {
+        public static string GroupItemBrightness {
             get {
-                return ResourceManager.GetString("GroupBrightness", resourceCulture);
+                return ResourceManager.GetString("GroupItemBrightness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to color.
+        /// </summary>
+        public static string GroupItemNextColor {
+            get {
+                return ResourceManager.GetString("GroupItemNextColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to save.
+        /// </summary>
+        public static string GroupItemSaveState {
+            get {
+                return ResourceManager.GetString("GroupItemSaveState", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to scene.
         /// </summary>
-        public static string GroupScene {
+        public static string GroupItemScene {
             get {
-                return ResourceManager.GetString("GroupScene", resourceCulture);
+                return ResourceManager.GetString("GroupItemScene", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to smooth.
+        /// </summary>
+        public static string GroupItemStart {
+            get {
+                return ResourceManager.GetString("GroupItemStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stop.
+        /// </summary>
+        public static string GroupItemStop {
+            get {
+                return ResourceManager.GetString("GroupItemStop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Off.
+        /// </summary>
+        public static string GroupItemToggleSwitcherOff {
+            get {
+                return ResourceManager.GetString("GroupItemToggleSwitcherOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On.
+        /// </summary>
+        public static string GroupItemToggleSwitcherOn {
+            get {
+                return ResourceManager.GetString("GroupItemToggleSwitcherOn", resourceCulture);
             }
         }
         
@@ -156,24 +219,6 @@ namespace NooliteSmartHome.Resources {
         public static string SettingsUserLabel {
             get {
                 return ResourceManager.GetString("SettingsUserLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Off.
-        /// </summary>
-        public static string ToggleSwitcherOff {
-            get {
-                return ResourceManager.GetString("ToggleSwitcherOff", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to On.
-        /// </summary>
-        public static string ToggleSwitcherOn {
-            get {
-                return ResourceManager.GetString("ToggleSwitcherOn", resourceCulture);
             }
         }
     }

@@ -123,11 +123,32 @@
   <data name="ApplicationTitle" xml:space="preserve">
     <value>NOOLITE SMART HOME</value>
   </data>
-  <data name="GroupBrightness" xml:space="preserve">
+  <data name="GroupItemApplyState" xml:space="preserve">
+    <value>применить</value>
+  </data>
+  <data name="GroupItemBrightness" xml:space="preserve">
     <value>яркость</value>
   </data>
-  <data name="GroupScene" xml:space="preserve">
+  <data name="GroupItemNextColor" xml:space="preserve">
+    <value>цвет</value>
+  </data>
+  <data name="GroupItemSaveState" xml:space="preserve">
+    <value>сохранить</value>
+  </data>
+  <data name="GroupItemScene" xml:space="preserve">
     <value>сценарий</value>
+  </data>
+  <data name="GroupItemStart" xml:space="preserve">
+    <value>перелив</value>
+  </data>
+  <data name="GroupItemStop" xml:space="preserve">
+    <value>стоп</value>
+  </data>
+  <data name="GroupItemToggleSwitcherOff" xml:space="preserve">
+    <value>Выкл.</value>
+  </data>
+  <data name="GroupItemToggleSwitcherOn" xml:space="preserve">
+    <value>Вкл.</value>
   </data>
   <data name="MainPageTitle" xml:space="preserve">
     <value>управление</value>
@@ -151,11 +172,5 @@
   </data>
   <data name="SettingsUserLabel" xml:space="preserve">
     <value>Логин</value>
-  </data>
-  <data name="ToggleSwitcherOff" xml:space="preserve">
-    <value>Выкл.</value>
-  </data>
-  <data name="ToggleSwitcherOn" xml:space="preserve">
-    <value>Вкл.</value>
   </data>
 </root>

@@ -13,21 +13,23 @@
 
 	<StackPanel>
 		<toolkit:ToggleSwitch x:Name="Switcher" Checked="Switcher_OnChecked" Unchecked="Switcher_OnUnchecked"
-			Content="{Binding Path=LocalizedResources.ToggleSwitcherOff, Source={StaticResource LocalizedStrings}}" />
+			Content="{Binding Path=LocalizedResources.GroupItemToggleSwitcherOff, Source={StaticResource LocalizedStrings}}" />
 		<StackPanel x:Name="PanelSlider" Orientation="Vertical">
 			<TextBlock x:Name="LabelSlider" Style="{StaticResource PhoneTextSmallStyle}" />
 			<Slider x:Name="Slider" Minimum="0" Maximum="100" Value="65" Background="{StaticResource PhoneChromeBrush}" ManipulationCompleted="UIElement_OnManipulationCompleted" />
 		</StackPanel>
+
 		<Grid x:Name="PanelLed">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="0.6*" />
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
-			<Button Grid.Column="0" Content="цвет" HorizontalAlignment="Stretch" Click="ChangeColorButton_OnClick" />
-			<Button Grid.Column="1" Content="перелив" HorizontalAlignment="Stretch" Click="StartColorChangingButton_OnClick" />
-			<Button Grid.Column="2" Content="стоп" HorizontalAlignment="Stretch" Click="StopColorChangingButton_OnClick" />
+			<Button Grid.Column="0" Content="{Binding Path=LocalizedResources.GroupItemNextColor, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="ChangeColorButton_OnClick" />
+			<Button Grid.Column="1" Content="{Binding Path=LocalizedResources.GroupItemStart, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="StartColorChangingButton_OnClick" />
+			<Button Grid.Column="2" Content="{Binding Path=LocalizedResources.GroupItemStop, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="StopColorChangingButton_OnClick" />
 		</Grid>
+
 		<StackPanel x:Name="PanelScene" Orientation="Vertical">
 			<TextBlock x:Name="LabelScene" Style="{StaticResource PhoneTextSmallStyle}" />
 			<Grid>
@@ -35,8 +37,8 @@
 					<ColumnDefinition Width="1.6*" />
 					<ColumnDefinition Width="*" />
 				</Grid.ColumnDefinitions>
-				<Button Grid.Column="0" Content="применить" HorizontalAlignment="Stretch" Click="ApplyButton_OnClick" />
-				<Button Grid.Column="1" Content="сохранить" HorizontalAlignment="Stretch" Click="SaveStateButton_OnClick" />
+				<Button Grid.Column="0" Content="{Binding Path=LocalizedResources.GroupItemApplyState, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="ApplyButton_OnClick" />
+				<Button Grid.Column="1" Content="{Binding Path=LocalizedResources.GroupItemSaveState, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="SaveStateButton_OnClick" />
 			</Grid>
 		</StackPanel>
 	</StackPanel>

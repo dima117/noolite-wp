@@ -123,10 +123,16 @@
   <data name="ApplicationTitle" xml:space="preserve">
     <value>NOOLITE SMART HOME</value>
   </data>
-  <data name="GroupBrightness" xml:space="preserve">
+  <data name="GroupItemBrightness" xml:space="preserve">
     <value>brightness</value>
   </data>
-  <data name="GroupScene" xml:space="preserve">
+  <data name="GroupItemToggleSwitcherOff" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="GroupItemToggleSwitcherOn" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="GroupItemScene" xml:space="preserve">
     <value>scene</value>
   </data>
   <data name="MainPageTitle" xml:space="preserve">
@@ -152,10 +158,19 @@
   <data name="SettingsUserLabel" xml:space="preserve">
     <value>User</value>
   </data>
-  <data name="ToggleSwitcherOff" xml:space="preserve">
-    <value>Off</value>
+  <data name="GroupItemApplyState" xml:space="preserve">
+    <value>apply</value>
   </data>
-  <data name="ToggleSwitcherOn" xml:space="preserve">
-    <value>On</value>
+  <data name="GroupItemNextColor" xml:space="preserve">
+    <value>color</value>
+  </data>
+  <data name="GroupItemSaveState" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="GroupItemStart" xml:space="preserve">
+    <value>smooth</value>
+  </data>
+  <data name="GroupItemStop" xml:space="preserve">
+    <value>stop</value>
   </data>
 </root>
