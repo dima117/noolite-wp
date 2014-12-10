@@ -150,6 +150,12 @@
   <data name="GroupItemToggleSwitcherOn" xml:space="preserve">
     <value>Вкл.</value>
   </data>
+  <data name="MainPageEmptySettings" xml:space="preserve">
+    <value>Приложение не настроено, отредактируйте</value>
+  </data>
+  <data name="MainPageLinkSettings" xml:space="preserve">
+    <value>настройки приложения</value>
+  </data>
   <data name="MainPageTitle" xml:space="preserve">
     <value>управление</value>
   </data>

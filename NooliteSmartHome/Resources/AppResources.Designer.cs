@@ -160,6 +160,24 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The application isn&apos;t adjusted, please edit.
+        /// </summary>
+        public static string MainPageEmptySettings {
+            get {
+                return ResourceManager.GetString("MainPageEmptySettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to application settings.
+        /// </summary>
+        public static string MainPageLinkSettings {
+            get {
+                return ResourceManager.GetString("MainPageLinkSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to management.
         /// </summary>
         public static string MainPageTitle {

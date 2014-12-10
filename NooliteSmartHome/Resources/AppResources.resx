@@ -173,4 +173,10 @@
   <data name="GroupItemStop" xml:space="preserve">
     <value>stop</value>
   </data>
+  <data name="MainPageEmptySettings" xml:space="preserve">
+    <value>The application isn't adjusted, please edit</value>
+  </data>
+  <data name="MainPageLinkSettings" xml:space="preserve">
+    <value>application settings</value>
+  </data>
 </root>
