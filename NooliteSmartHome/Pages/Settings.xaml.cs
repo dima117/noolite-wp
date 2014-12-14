@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Navigation;
 using Microsoft.Phone.Shell;
 using NooliteSmartHome.Helpers;
+using NooliteSmartHome.Resources;
 
 namespace NooliteSmartHome.Pages
 {
@@ -55,7 +56,7 @@ namespace NooliteSmartHome.Pages
 
 		private async void UpdateConfiguration()
 		{
-			SystemTray.ProgressIndicator.Text = "идет обновление конфигурации";
+			SystemTray.ProgressIndicator.Text = AppResources.Common_ConfigurationIsLoading;
 			SystemTray.ProgressIndicator.IsIndeterminate = true;
 			SystemTray.ProgressIndicator.IsVisible = true;
 
@@ -68,12 +69,12 @@ namespace NooliteSmartHome.Pages
 
 				if (cfg == null)
 				{
-					MessageBox.Show("Ошибка при синхронизации!");
+					MessageBox.Show(AppResources.Common_LoadingConfigurationError);
 				}
 			}
 			else
 			{
-				MessageBox.Show("Ошибка при синхронизации!");
+				MessageBox.Show(AppResources.Common_LoadingConfigurationError);
 			}
 
 			SystemTray.ProgressIndicator.IsVisible = false;

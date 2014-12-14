@@ -7,6 +7,7 @@ using Microsoft.Phone.Shell;
 using NooliteSmartHome.Gateway.Configuration;
 using NooliteSmartHome.Helpers;
 using NooliteSmartHome.Model;
+using NooliteSmartHome.Resources;
 
 namespace NooliteSmartHome.Pages
 {
@@ -54,7 +55,7 @@ namespace NooliteSmartHome.Pages
 		// todo: дублирование кода на странице настроек
 		private async void UpdateConfiguration()
 		{
-			SystemTray.ProgressIndicator.Text = "идет обновление конфигурации";
+			SystemTray.ProgressIndicator.Text = AppResources.Common_ConfigurationIsLoading;
 			SystemTray.ProgressIndicator.IsIndeterminate = true;
 			SystemTray.ProgressIndicator.IsVisible = true;
 
@@ -67,16 +68,16 @@ namespace NooliteSmartHome.Pages
 
 				if (cfg == null)
 				{
-					MessageBox.Show("Ошибка при синхронизации!");
+					MessageBox.Show(AppResources.Common_LoadingConfigurationError);
 				}
 				else
 				{
-					MessageBox.Show("Синхронизация прошла успешно");
+					MessageBox.Show(AppResources.Common_SynchronizationIsCompletedSuccessfully);
 				}
 			}
 			else
 			{
-				MessageBox.Show("Ошибка при синхронизации!");
+				MessageBox.Show(AppResources.Common_LoadingConfigurationError);
 			}
 
 			SystemTray.ProgressIndicator.IsVisible = false;

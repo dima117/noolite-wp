@@ -35,8 +35,8 @@ namespace NooliteSmartHome.Pages
 		private void SetChannelName(string name)
 		{
 			Switcher.Header = name;
-			LabelSlider.Text = string.Format("{0} ({1})", name, AppResources.GroupItemBrightness);
-			LabelScene.Text = string.Format("{0} ({1})", name, AppResources.GroupItemScene);
+			LabelSlider.Text = string.Format("{0} ({1})", name, AppResources.GroupItem_Brightness);
+			LabelScene.Text = string.Format("{0} ({1})", name, AppResources.GroupItem_Scene);
 		}
 
 		#endregion
@@ -152,13 +152,13 @@ namespace NooliteSmartHome.Pages
 
 		private void Switcher_OnChecked(object sender, RoutedEventArgs e)
 		{
-			Switcher.Content = AppResources.GroupItemToggleSwitcherOn;
+			Switcher.Content = AppResources.GroupItem_ToggleSwitcherOn;
 			OnSendCommand(GatewayCommand.On, Index);
 		}
 
 		private void Switcher_OnUnchecked(object sender, RoutedEventArgs e)
 		{
-			Switcher.Content = AppResources.GroupItemToggleSwitcherOff;
+			Switcher.Content = AppResources.GroupItem_ToggleSwitcherOff;
 			OnSendCommand(GatewayCommand.Off, Index);
 		}
 	}

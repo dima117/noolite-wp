@@ -123,16 +123,16 @@
   <data name="ApplicationTitle" xml:space="preserve">
     <value>NOOLITE SMART HOME</value>
   </data>
-  <data name="GroupItemBrightness" xml:space="preserve">
+  <data name="GroupItem_Brightness" xml:space="preserve">
     <value>brightness</value>
   </data>
-  <data name="GroupItemToggleSwitcherOff" xml:space="preserve">
+  <data name="GroupItem_ToggleSwitcherOff" xml:space="preserve">
     <value>Off</value>
   </data>
-  <data name="GroupItemToggleSwitcherOn" xml:space="preserve">
+  <data name="GroupItem_ToggleSwitcherOn" xml:space="preserve">
     <value>On</value>
   </data>
-  <data name="GroupItemScene" xml:space="preserve">
+  <data name="GroupItem_Scene" xml:space="preserve">
     <value>scene</value>
   </data>
   <data name="MainPageTitle" xml:space="preserve">
@@ -158,19 +158,19 @@
   <data name="SettingsUserLabel" xml:space="preserve">
     <value>User</value>
   </data>
-  <data name="GroupItemApplyState" xml:space="preserve">
+  <data name="GroupItem_ApplyState" xml:space="preserve">
     <value>apply</value>
   </data>
-  <data name="GroupItemNextColor" xml:space="preserve">
+  <data name="GroupItem_NextColor" xml:space="preserve">
     <value>color</value>
   </data>
-  <data name="GroupItemSaveState" xml:space="preserve">
+  <data name="GroupItem_SaveState" xml:space="preserve">
     <value>save</value>
   </data>
-  <data name="GroupItemStart" xml:space="preserve">
+  <data name="GroupItem_Start" xml:space="preserve">
     <value>smooth</value>
   </data>
-  <data name="GroupItemStop" xml:space="preserve">
+  <data name="GroupItem_Stop" xml:space="preserve">
     <value>stop</value>
   </data>
   <data name="MainPageEmptySettings" xml:space="preserve">
@@ -178,5 +178,14 @@
   </data>
   <data name="MainPageLinkSettings" xml:space="preserve">
     <value>application settings</value>
+  </data>
+  <data name="Common_ConfigurationIsLoading" xml:space="preserve">
+    <value>configuration is loading...</value>
+  </data>
+  <data name="Common_LoadingConfigurationError" xml:space="preserve">
+    <value>Loading configuration error!</value>
+  </data>
+  <data name="Common_SynchronizationIsCompletedSuccessfully" xml:space="preserve">
+    <value>Synchronization is completed successfully</value>
   </data>
 </root>

@@ -79,83 +79,110 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to configuration is loading....
+        /// </summary>
+        public static string Common_ConfigurationIsLoading {
+            get {
+                return ResourceManager.GetString("Common_ConfigurationIsLoading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading configuration error!.
+        /// </summary>
+        public static string Common_LoadingConfigurationError {
+            get {
+                return ResourceManager.GetString("Common_LoadingConfigurationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Synchronization is completed successfully.
+        /// </summary>
+        public static string Common_SynchronizationIsCompletedSuccessfully {
+            get {
+                return ResourceManager.GetString("Common_SynchronizationIsCompletedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to apply.
         /// </summary>
-        public static string GroupItemApplyState {
+        public static string GroupItem_ApplyState {
             get {
-                return ResourceManager.GetString("GroupItemApplyState", resourceCulture);
+                return ResourceManager.GetString("GroupItem_ApplyState", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to brightness.
         /// </summary>
-        public static string GroupItemBrightness {
+        public static string GroupItem_Brightness {
             get {
-                return ResourceManager.GetString("GroupItemBrightness", resourceCulture);
+                return ResourceManager.GetString("GroupItem_Brightness", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to color.
         /// </summary>
-        public static string GroupItemNextColor {
+        public static string GroupItem_NextColor {
             get {
-                return ResourceManager.GetString("GroupItemNextColor", resourceCulture);
+                return ResourceManager.GetString("GroupItem_NextColor", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to save.
         /// </summary>
-        public static string GroupItemSaveState {
+        public static string GroupItem_SaveState {
             get {
-                return ResourceManager.GetString("GroupItemSaveState", resourceCulture);
+                return ResourceManager.GetString("GroupItem_SaveState", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to scene.
         /// </summary>
-        public static string GroupItemScene {
+        public static string GroupItem_Scene {
             get {
-                return ResourceManager.GetString("GroupItemScene", resourceCulture);
+                return ResourceManager.GetString("GroupItem_Scene", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to smooth.
         /// </summary>
-        public static string GroupItemStart {
+        public static string GroupItem_Start {
             get {
-                return ResourceManager.GetString("GroupItemStart", resourceCulture);
+                return ResourceManager.GetString("GroupItem_Start", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to stop.
         /// </summary>
-        public static string GroupItemStop {
+        public static string GroupItem_Stop {
             get {
-                return ResourceManager.GetString("GroupItemStop", resourceCulture);
+                return ResourceManager.GetString("GroupItem_Stop", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Off.
         /// </summary>
-        public static string GroupItemToggleSwitcherOff {
+        public static string GroupItem_ToggleSwitcherOff {
             get {
-                return ResourceManager.GetString("GroupItemToggleSwitcherOff", resourceCulture);
+                return ResourceManager.GetString("GroupItem_ToggleSwitcherOff", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to On.
         /// </summary>
-        public static string GroupItemToggleSwitcherOn {
+        public static string GroupItem_ToggleSwitcherOn {
             get {
-                return ResourceManager.GetString("GroupItemToggleSwitcherOn", resourceCulture);
+                return ResourceManager.GetString("GroupItem_ToggleSwitcherOn", resourceCulture);
             }
         }
         
