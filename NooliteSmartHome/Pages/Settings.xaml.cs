@@ -12,7 +12,44 @@ namespace NooliteSmartHome.Pages
 		public Settings()
 		{
 			InitializeComponent();
+			BuildLocalizedApplicationBar();
 		}
+
+		#region app bar
+
+		private ApplicationBarIconButton BuildAppBarButton(string text, string icon, EventHandler handler)
+		{
+			var iconUri = new Uri(icon, UriKind.Relative);
+
+			var appBarButton = new ApplicationBarIconButton(iconUri) { Text = text };
+			appBarButton.Click += handler;
+
+			return appBarButton;
+		}
+
+		private void BuildLocalizedApplicationBar()
+		{
+			ApplicationBar = new ApplicationBar();
+			
+			ApplicationBar.Buttons.Add(
+				BuildAppBarButton(AppResources.AppBarButtonSave, "/Assets/AppBar/save.png", SaveButtonClick));
+
+			ApplicationBar.Buttons.Add(
+				BuildAppBarButton(AppResources.AppBarButtonCancel, "/Assets/AppBar/cancel.png", CancelButtonClick));
+		}
+
+		private void SaveButtonClick(object sender, EventArgs e)
+		{
+			SaveSettings();
+			UpdateConfiguration();
+		}
+
+		private void CancelButtonClick(object sender, EventArgs e)
+		{
+			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
+		}
+
+		#endregion
 
 		#region load
 
@@ -78,21 +115,6 @@ namespace NooliteSmartHome.Pages
 			}
 
 			SystemTray.ProgressIndicator.IsVisible = false;
-			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
-		}
-
-		private void SaveButton_OnClick(object sender, EventArgs e)
-		{
-			SaveSettings();
-			UpdateConfiguration();
-		}
-
-		#endregion
-
-		#region cancel
-
-		private void CancelButton_OnClick(object sender, EventArgs e)
-		{
 			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
 		}
 

@@ -12,12 +12,6 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
-	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="SaveButton_OnClick"/>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel" Click="CancelButton_OnClick"/>
-		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
 
 	<shell:SystemTray.ProgressIndicator>
 		<shell:ProgressIndicator IsVisible="False" />
