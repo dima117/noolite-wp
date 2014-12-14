@@ -151,7 +151,7 @@
     <value>яркость</value>
   </data>
   <data name="GroupItem_NextColor" xml:space="preserve">
-    <value>цвет</value>
+    <value>другой</value>
   </data>
   <data name="GroupItem_SaveState" xml:space="preserve">
     <value>сохранить</value>
@@ -160,7 +160,7 @@
     <value>сценарий</value>
   </data>
   <data name="GroupItem_Start" xml:space="preserve">
-    <value>перелив</value>
+    <value>плавно</value>
   </data>
   <data name="GroupItem_Stop" xml:space="preserve">
     <value>стоп</value>
@@ -205,6 +205,9 @@
   </data>
   <data name="Common_SendCommandError" xml:space="preserve">
     <value>Не удалось выполнить команду</value>
+  </data>
+  <data name="GroupItem_ColorChanging" xml:space="preserve">
+    <value>изменение цвета</value>
   </data>
   <data name="SettingsPage_AuthenticationLabel" xml:space="preserve">
     <value>Аутентификация</value>

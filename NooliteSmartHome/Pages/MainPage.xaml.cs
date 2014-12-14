@@ -74,6 +74,11 @@ namespace NooliteSmartHome.Pages
 
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
+			UpdateGroupList();
+		}
+
+		private void UpdateGroupList()
+		{
 			var config = ApplicationData.GetConfiguration();
 
 			if (config == null)
@@ -134,6 +139,7 @@ namespace NooliteSmartHome.Pages
 				else
 				{
 					MessageBox.Show(AppResources.Common_SynchronizationIsCompletedSuccessfully);
+					UpdateGroupList();
 				}
 			}
 			else

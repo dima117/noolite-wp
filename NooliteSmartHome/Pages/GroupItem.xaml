@@ -19,17 +19,19 @@
 			<Slider x:Name="Slider" Minimum="0" Maximum="100" Value="65" Background="{StaticResource PhoneChromeBrush}" ManipulationCompleted="UIElement_OnManipulationCompleted" />
 		</StackPanel>
 
-		<Grid x:Name="PanelLed">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="0.6*" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
-			</Grid.ColumnDefinitions>
-			<Button Grid.Column="0" Content="{Binding Path=LocalizedResources.GroupItem_NextColor, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="ChangeColorButton_OnClick" />
-			<Button Grid.Column="1" Content="{Binding Path=LocalizedResources.GroupItem_Start, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="StartColorChangingButton_OnClick" />
-			<Button Grid.Column="2" Content="{Binding Path=LocalizedResources.GroupItem_Stop, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="StopColorChangingButton_OnClick" />
-		</Grid>
-
+		<StackPanel x:Name="PanelLed" Orientation="Vertical">
+			<TextBlock x:Name="LabelLed" Style="{StaticResource PhoneTextSmallStyle}" />
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.8*" />
+					<ColumnDefinition Width="0.8*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Button Grid.Column="0" Content="{Binding Path=LocalizedResources.GroupItem_NextColor, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="ChangeColorButton_OnClick" />
+				<Button Grid.Column="1" Content="{Binding Path=LocalizedResources.GroupItem_Start, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="StartColorChangingButton_OnClick" />
+				<Button Grid.Column="2" Content="{Binding Path=LocalizedResources.GroupItem_Stop, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Stretch" Click="StopColorChangingButton_OnClick" />
+			</Grid>
+		</StackPanel>
 		<StackPanel x:Name="PanelScene" Orientation="Vertical">
 			<TextBlock x:Name="LabelScene" Style="{StaticResource PhoneTextSmallStyle}" />
 			<Grid>

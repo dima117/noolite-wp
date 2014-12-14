@@ -162,7 +162,7 @@
     <value>apply</value>
   </data>
   <data name="GroupItem_NextColor" xml:space="preserve">
-    <value>color</value>
+    <value>next</value>
   </data>
   <data name="GroupItem_SaveState" xml:space="preserve">
     <value>save</value>
@@ -180,7 +180,7 @@
     <value>application settings</value>
   </data>
   <data name="AboutPage_MainText1" xml:space="preserve">
-    <value>The application nooLite Smart Home allows to control the lighting and electric appliances by your mobile phone.</value>
+    <value>The nooLite Smart Home application allows to control the lighting and electric appliances by your mobile phone.</value>
   </data>
   <data name="AboutPage_MainText2" xml:space="preserve">
     <value>This application require the hardware: nooLite control units and nooLite Ethernet gateway.</value>
@@ -217,6 +217,9 @@
   </data>
   <data name="Common_SendCommandError" xml:space="preserve">
     <value>Failed to execute the command</value>
+  </data>
+  <data name="GroupItem_ColorChanging" xml:space="preserve">
+    <value>color changing</value>
   </data>
   <data name="SettingsPage_AuthenticationLabel" xml:space="preserve">
     <value>Use authentication</value>

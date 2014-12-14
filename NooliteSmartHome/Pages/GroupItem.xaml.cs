@@ -37,6 +37,7 @@ namespace NooliteSmartHome.Pages
 			Switcher.Header = name;
 			LabelSlider.Text = string.Format("{0} ({1})", name, AppResources.GroupItem_Brightness);
 			LabelScene.Text = string.Format("{0} ({1})", name, AppResources.GroupItem_Scene);
+			LabelLed.Text = string.Format("{0} ({1})", name, AppResources.GroupItem_ColorChanging);
 		}
 
 		#endregion

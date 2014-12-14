@@ -61,7 +61,7 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The application nooLite Smart Home allows to control the lighting and electric appliances by your mobile phone..
+        ///   Looks up a localized string similar to The nooLite Smart Home application allows to control the lighting and electric appliances by your mobile phone..
         /// </summary>
         public static string AboutPage_MainText1 {
             get {
@@ -214,7 +214,16 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to color.
+        ///   Looks up a localized string similar to color changing.
+        /// </summary>
+        public static string GroupItem_ColorChanging {
+            get {
+                return ResourceManager.GetString("GroupItem_ColorChanging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to next.
         /// </summary>
         public static string GroupItem_NextColor {
             get {
