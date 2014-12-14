@@ -99,18 +99,18 @@ namespace NooliteSmartHome.Resources {
         /// <summary>
         ///   Looks up a localized string similar to about.
         /// </summary>
-        public static string AboutPageTitle {
+        public static string AboutPage_Title {
             get {
-                return ResourceManager.GetString("AboutPageTitle", resourceCulture);
+                return ResourceManager.GetString("AboutPage_Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to NOOLITE SMART HOME.
         /// </summary>
-        public static string ApplicationTitle {
+        public static string Application_Title {
             get {
-                return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+                return ResourceManager.GetString("Application_Title", resourceCulture);
             }
         }
         
@@ -225,27 +225,27 @@ namespace NooliteSmartHome.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The application isn&apos;t adjusted, please edit.
         /// </summary>
-        public static string MainPageEmptySettings {
+        public static string MainPage_EmptySettings {
             get {
-                return ResourceManager.GetString("MainPageEmptySettings", resourceCulture);
+                return ResourceManager.GetString("MainPage_EmptySettings", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to application settings.
         /// </summary>
-        public static string MainPageLinkSettings {
+        public static string MainPage_LinkSettings {
             get {
-                return ResourceManager.GetString("MainPageLinkSettings", resourceCulture);
+                return ResourceManager.GetString("MainPage_LinkSettings", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to management.
         /// </summary>
-        public static string MainPageTitle {
+        public static string MainPage_Title {
             get {
-                return ResourceManager.GetString("MainPageTitle", resourceCulture);
+                return ResourceManager.GetString("MainPage_Title", resourceCulture);
             }
         }
         
@@ -268,38 +268,47 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PR1132 Gateway address.
+        ///   Looks up a localized string similar to Use authentication.
         /// </summary>
-        public static string SettingsHostLabel {
+        public static string SettingsPage_AuthenticationLabel {
             get {
-                return ResourceManager.GetString("SettingsHostLabel", resourceCulture);
+                return ResourceManager.GetString("SettingsPage_AuthenticationLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to settings.
+        ///   Looks up a localized string similar to nooLite gateway URL address.
         /// </summary>
-        public static string SettingsPageTitle {
+        public static string SettingsPage_HostLabel {
             get {
-                return ResourceManager.GetString("SettingsPageTitle", resourceCulture);
+                return ResourceManager.GetString("SettingsPage_HostLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
-        public static string SettingsPasswordLabel {
+        public static string SettingsPage_PasswordLabel {
             get {
-                return ResourceManager.GetString("SettingsPasswordLabel", resourceCulture);
+                return ResourceManager.GetString("SettingsPage_PasswordLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User.
+        ///   Looks up a localized string similar to settings.
         /// </summary>
-        public static string SettingsUserLabel {
+        public static string SettingsPage_Title {
             get {
-                return ResourceManager.GetString("SettingsUserLabel", resourceCulture);
+                return ResourceManager.GetString("SettingsPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name.
+        /// </summary>
+        public static string SettingsPage_UserLabel {
+            get {
+                return ResourceManager.GetString("SettingsPage_UserLabel", resourceCulture);
             }
         }
     }

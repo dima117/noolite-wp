@@ -25,7 +25,7 @@ namespace NooliteSmartHome.Pages
 			if (settings.AuthInfo != null)
 			{
 				TbLogin.Text = settings.AuthInfo.User;
-				TbPassword.Text = settings.AuthInfo.Password;
+				TbPassword.Password = settings.AuthInfo.Password;
 				PanelAuth.Visibility = Visibility.Visible;
 			}
 		}
@@ -43,7 +43,7 @@ namespace NooliteSmartHome.Pages
 				ApplicationData.Settings.AuthInfo = new AuthInfo
 				{
 					User = TbLogin.Text,
-					Password = TbPassword.Text
+					Password = TbPassword.Password
 				};
 			}
 			else

@@ -32,21 +32,26 @@
 
 		<!--TitlePanel contains the name of the application and page title-->
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
-			<TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
-			<TextBlock Text="{Binding Path=LocalizedResources.SettingsPageTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+			<TextBlock Text="{Binding Path=LocalizedResources.Application_Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
+			<TextBlock Text="{Binding Path=LocalizedResources.SettingsPage_Title, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
 		</StackPanel>
 
 		<!--ContentPanel - place additional content here-->
 		<Grid x:Name="ContentPanel" Grid.Row="1">
 			<StackPanel Margin="8">
-				<TextBlock Text="{Binding Path=LocalizedResources.SettingsHostLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
+				<TextBlock Text="{Binding Path=LocalizedResources.SettingsPage_HostLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
 				<TextBox x:Name="TbGatewayHost"></TextBox>
-				<CheckBox x:Name="CbUseAuth" Content="Аутентификация" Click="AuthFieldsIsVisible_OnClick" />
+				<CheckBox x:Name="CbUseAuth" 
+					Content="{Binding Path=LocalizedResources.SettingsPage_AuthenticationLabel, Source={StaticResource LocalizedStrings}}" 
+					Click="AuthFieldsIsVisible_OnClick" />
 				<StackPanel x:Name="PanelAuth" Visibility="Collapsed">
-					<TextBlock Text="Логин" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
+					<TextBlock 
+						Text="{Binding Path=LocalizedResources.SettingsPage_UserLabel, Source={StaticResource LocalizedStrings}}" 
+						Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
 					<TextBox x:Name="TbLogin"></TextBox>
-					<TextBlock Text="Пароль" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
-					<TextBox x:Name="TbPassword"></TextBox>
+					<TextBlock 
+						Text="{Binding Path=LocalizedResources.SettingsPage_PasswordLabel, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSmallStyle}"></TextBlock>
+					<PasswordBox x:Name="TbPassword"  />
 				</StackPanel>
 			</StackPanel>
 		</Grid>

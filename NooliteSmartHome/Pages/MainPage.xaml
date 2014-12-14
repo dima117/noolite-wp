@@ -32,16 +32,16 @@
 		</Grid.RowDefinitions>
 
 		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-			<TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-			<TextBlock Text="{Binding Path=LocalizedResources.MainPageTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+			<TextBlock Text="{Binding Path=LocalizedResources.Application_Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+			<TextBlock Text="{Binding Path=LocalizedResources.MainPage_Title, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
 		</StackPanel>
 
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 			<RichTextBox x:Name="EmptyTextBlock" Visibility="Collapsed">
 				<Paragraph FontFamily="{StaticResource PhoneFontFamilySemiLight}" FontSize="{StaticResource PhoneFontSizeNormal}">
-					<Run Text="{Binding Path=LocalizedResources.MainPageEmptySettings, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource PhoneSubtleBrush}" />
+					<Run Text="{Binding Path=LocalizedResources.MainPage_EmptySettings, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource PhoneSubtleBrush}" />
 					<Hyperlink Click="BtnSettingsClick">
-						<Run Text="{Binding Path=LocalizedResources.MainPageLinkSettings, Source={StaticResource LocalizedStrings}}" />
+						<Run Text="{Binding Path=LocalizedResources.MainPage_LinkSettings, Source={StaticResource LocalizedStrings}}" />
 					</Hyperlink>
 				</Paragraph>
 			</RichTextBox>

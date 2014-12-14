@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutPageTitle" xml:space="preserve">
+  <data name="AboutPage_Title" xml:space="preserve">
     <value>about</value>
   </data>
-  <data name="ApplicationTitle" xml:space="preserve">
+  <data name="Application_Title" xml:space="preserve">
     <value>NOOLITE SMART HOME</value>
   </data>
   <data name="GroupItem_Brightness" xml:space="preserve">
@@ -135,7 +135,7 @@
   <data name="GroupItem_Scene" xml:space="preserve">
     <value>scene</value>
   </data>
-  <data name="MainPageTitle" xml:space="preserve">
+  <data name="MainPage_Title" xml:space="preserve">
     <value>management</value>
   </data>
   <data name="ResourceFlowDirection" xml:space="preserve">
@@ -146,17 +146,17 @@
     <value>en-US</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
-  <data name="SettingsHostLabel" xml:space="preserve">
-    <value>PR1132 Gateway address</value>
+  <data name="SettingsPage_HostLabel" xml:space="preserve">
+    <value>nooLite gateway URL address</value>
   </data>
-  <data name="SettingsPageTitle" xml:space="preserve">
+  <data name="SettingsPage_Title" xml:space="preserve">
     <value>settings</value>
   </data>
-  <data name="SettingsPasswordLabel" xml:space="preserve">
+  <data name="SettingsPage_PasswordLabel" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="SettingsUserLabel" xml:space="preserve">
-    <value>User</value>
+  <data name="SettingsPage_UserLabel" xml:space="preserve">
+    <value>User name</value>
   </data>
   <data name="GroupItem_ApplyState" xml:space="preserve">
     <value>apply</value>
@@ -173,10 +173,10 @@
   <data name="GroupItem_Stop" xml:space="preserve">
     <value>stop</value>
   </data>
-  <data name="MainPageEmptySettings" xml:space="preserve">
+  <data name="MainPage_EmptySettings" xml:space="preserve">
     <value>The application isn't adjusted, please edit</value>
   </data>
-  <data name="MainPageLinkSettings" xml:space="preserve">
+  <data name="MainPage_LinkSettings" xml:space="preserve">
     <value>application settings</value>
   </data>
   <data name="AboutPage_MainText1" xml:space="preserve">
@@ -199,5 +199,8 @@
   </data>
   <data name="Common_SynchronizationIsCompletedSuccessfully" xml:space="preserve">
     <value>Synchronization is completed successfully</value>
+  </data>
+  <data name="SettingsPage_AuthenticationLabel" xml:space="preserve">
+    <value>Use authentication</value>
   </data>
 </root>
