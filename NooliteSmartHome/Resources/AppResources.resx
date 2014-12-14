@@ -179,6 +179,18 @@
   <data name="MainPageLinkSettings" xml:space="preserve">
     <value>application settings</value>
   </data>
+  <data name="AboutPage_MainText1" xml:space="preserve">
+    <value>The application nooLite Smart Home allows to control the lighting and electric appliances by your mobile phone.</value>
+  </data>
+  <data name="AboutPage_MainText2" xml:space="preserve">
+    <value>This application require the hardware: nooLite control units and nooLite Ethernet gateway.</value>
+  </data>
+  <data name="AboutPage_MainText3" xml:space="preserve">
+    <value>Learn more about nooLite system on the site:</value>
+  </data>
+  <data name="AboutPage_RateTheApplication" xml:space="preserve">
+    <value>rate the application</value>
+  </data>
   <data name="Common_ConfigurationIsLoading" xml:space="preserve">
     <value>configuration is loading...</value>
   </data>

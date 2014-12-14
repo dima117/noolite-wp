@@ -120,6 +120,18 @@
   <data name="AboutPageTitle" xml:space="preserve">
     <value>о программе</value>
   </data>
+  <data name="AboutPage_MainText1" xml:space="preserve">
+    <value>Приложение nooLite Smart Home позволяет управлять освещением и электроприборами с вашего телефона.</value>
+  </data>
+  <data name="AboutPage_MainText2" xml:space="preserve">
+    <value>Для работы приложения потребуются Ethernet-шлюз nooLite и управляющие блоки nooLite.</value>
+  </data>
+  <data name="AboutPage_MainText3" xml:space="preserve">
+    <value>Подробнее о системе nooLite можно узнать по адресу:</value>
+  </data>
+  <data name="AboutPage_RateTheApplication" xml:space="preserve">
+    <value>оцените приложение</value>
+  </data>
   <data name="ApplicationTitle" xml:space="preserve">
     <value>NOOLITE SMART HOME</value>
   </data>

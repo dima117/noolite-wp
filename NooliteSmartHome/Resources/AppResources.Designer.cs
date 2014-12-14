@@ -61,6 +61,42 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The application nooLite Smart Home allows to control the lighting and electric appliances by your mobile phone..
+        /// </summary>
+        public static string AboutPage_MainText1 {
+            get {
+                return ResourceManager.GetString("AboutPage_MainText1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This application require the hardware: nooLite control units and nooLite Ethernet gateway..
+        /// </summary>
+        public static string AboutPage_MainText2 {
+            get {
+                return ResourceManager.GetString("AboutPage_MainText2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn more about nooLite system on the site:.
+        /// </summary>
+        public static string AboutPage_MainText3 {
+            get {
+                return ResourceManager.GetString("AboutPage_MainText3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rate the application.
+        /// </summary>
+        public static string AboutPage_RateTheApplication {
+            get {
+                return ResourceManager.GetString("AboutPage_RateTheApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to about.
         /// </summary>
         public static string AboutPageTitle {
