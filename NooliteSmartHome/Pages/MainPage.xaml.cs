@@ -17,7 +17,60 @@ namespace NooliteSmartHome.Pages
 		public MainPage()
 		{
 			InitializeComponent();
+			BuildLocalizedApplicationBar();
 		}
+
+		#region app bar
+
+		private ApplicationBarIconButton BuildAppBarButton(string text, string icon, EventHandler handler)
+		{
+			var iconUri = new Uri(icon, UriKind.Relative);
+
+			var appBarButton = new ApplicationBarIconButton(iconUri) { Text = text };
+			appBarButton.Click += handler;
+
+			return appBarButton;
+		}
+
+		private ApplicationBarMenuItem BuildAppBarMenuItem(string text, EventHandler handler)
+		{
+			var appBarButton = new ApplicationBarMenuItem { Text = text };
+			appBarButton.Click += handler;
+
+			return appBarButton;
+		}
+
+		private void BuildLocalizedApplicationBar()
+		{
+			ApplicationBar = new ApplicationBar();
+
+
+			ApplicationBar.Buttons.Add(
+				BuildAppBarButton(AppResources.AppBarButtonSync, "/Assets/AppBar/sync.png", BtnSyncClick));
+
+			ApplicationBar.MenuItems.Add(
+				BuildAppBarMenuItem(AppResources.AppBarButtonSettings, BtnSettingsClick));
+
+			ApplicationBar.MenuItems.Add(
+				BuildAppBarMenuItem(AppResources.AppBarButtonAbout, BtnAboutClick));
+		}
+
+		private void BtnSyncClick(object sender, EventArgs e)
+		{
+			UpdateConfiguration();
+		}
+
+		private void BtnSettingsClick(object sender, EventArgs e)
+		{
+			NavigationService.Navigate(new Uri("/Pages/Settings.xaml", UriKind.Relative));
+		}
+
+		private void BtnAboutClick(object sender, EventArgs e)
+		{
+			NavigationService.Navigate(new Uri("/Pages/About.xaml", UriKind.Relative));
+		}
+
+		#endregion
 
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
@@ -83,18 +136,6 @@ namespace NooliteSmartHome.Pages
 			SystemTray.ProgressIndicator.IsVisible = false;
 		}
 
-		#region navigation
-
-		private void BtnSettingsClick(object sender, EventArgs e)
-		{
-			NavigationService.Navigate(new Uri("/Pages/Settings.xaml", UriKind.Relative));
-		}
-
-		private void BtnAboutClick(object sender, EventArgs e)
-		{
-			NavigationService.Navigate(new Uri("/Pages/About.xaml", UriKind.Relative));
-		}
-
 		private void GroupListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			var group = GroupList.SelectedItem as GroupModel;
@@ -105,13 +146,5 @@ namespace NooliteSmartHome.Pages
 				NavigationService.Navigate(new Uri(url, UriKind.Relative));
 			}
 		}
-
-		#endregion
-
-		private void BtnSyncClick(object sender, EventArgs e)
-		{
-			UpdateConfiguration();
-		}
 	}
-
 }

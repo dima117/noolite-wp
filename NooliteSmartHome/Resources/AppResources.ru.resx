@@ -188,6 +188,21 @@
     <value>ru</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
+  <data name="AppBarButtonAbout" xml:space="preserve">
+    <value>о программе</value>
+  </data>
+  <data name="AppBarButtonCancel" xml:space="preserve">
+    <value>отмена</value>
+  </data>
+  <data name="AppBarButtonSave" xml:space="preserve">
+    <value>сохранить</value>
+  </data>
+  <data name="AppBarButtonSettings" xml:space="preserve">
+    <value>настройки</value>
+  </data>
+  <data name="AppBarButtonSync" xml:space="preserve">
+    <value>обновить</value>
+  </data>
   <data name="SettingsPage_AuthenticationLabel" xml:space="preserve">
     <value>Аутентификация</value>
   </data>

@@ -106,6 +106,51 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to about.
+        /// </summary>
+        public static string AppBarButtonAbout {
+            get {
+                return ResourceManager.GetString("AppBarButtonAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cancel.
+        /// </summary>
+        public static string AppBarButtonCancel {
+            get {
+                return ResourceManager.GetString("AppBarButtonCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to save.
+        /// </summary>
+        public static string AppBarButtonSave {
+            get {
+                return ResourceManager.GetString("AppBarButtonSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to settings.
+        /// </summary>
+        public static string AppBarButtonSettings {
+            get {
+                return ResourceManager.GetString("AppBarButtonSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sync.
+        /// </summary>
+        public static string AppBarButtonSync {
+            get {
+                return ResourceManager.GetString("AppBarButtonSync", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NOOLITE SMART HOME.
         /// </summary>
         public static string Application_Title {
