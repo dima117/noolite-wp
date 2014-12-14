@@ -215,6 +215,9 @@
   <data name="AppBarButtonSync" xml:space="preserve">
     <value>sync</value>
   </data>
+  <data name="Common_SendCommandError" xml:space="preserve">
+    <value>Failed to execute the command</value>
+  </data>
   <data name="SettingsPage_AuthenticationLabel" xml:space="preserve">
     <value>Use authentication</value>
   </data>

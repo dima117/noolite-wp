@@ -203,6 +203,9 @@
   <data name="AppBarButtonSync" xml:space="preserve">
     <value>обновить</value>
   </data>
+  <data name="Common_SendCommandError" xml:space="preserve">
+    <value>Не удалось выполнить команду</value>
+  </data>
   <data name="SettingsPage_AuthenticationLabel" xml:space="preserve">
     <value>Аутентификация</value>
   </data>

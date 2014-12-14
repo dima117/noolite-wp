@@ -97,8 +97,16 @@ namespace NooliteSmartHome.Pages
 			SystemTray.ProgressIndicator.IsIndeterminate = true;
 			SystemTray.ProgressIndicator.IsVisible = true;
 
-			var gateway = ApplicationData.Settings.CreateGateway();
-			var buf = await gateway.LoadConfigurationAsync();
+			byte[] buf = null;
+
+			try
+			{
+				var gateway = ApplicationData.Settings.CreateGateway();
+				buf = await gateway.LoadConfigurationAsync();
+			}
+			catch
+			{
+			}
 
 			if (buf != null)
 			{

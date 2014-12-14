@@ -178,6 +178,15 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to execute the command.
+        /// </summary>
+        public static string Common_SendCommandError {
+            get {
+                return ResourceManager.GetString("Common_SendCommandError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Synchronization is completed successfully.
         /// </summary>
         public static string Common_SynchronizationIsCompletedSuccessfully {

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Navigation;
 using NooliteSmartHome.Gateway.Configuration;
 using NooliteSmartHome.Helpers;
 using NooliteSmartHome.Model;
+using NooliteSmartHome.Resources;
 
 namespace NooliteSmartHome.Pages
 {
@@ -63,10 +65,17 @@ namespace NooliteSmartHome.Pages
 
 		private void GroupItem_OnSendCommand(object sender, SendCommandEventArgs e)
 		{
-			ApplicationData
-				.Settings
-				.CreateGateway()
-				.SendCommandAsync(e.command, e.channel, e.brightness);
+			try
+			{
+				ApplicationData
+					.Settings
+					.CreateGateway()
+					.SendCommandAsync(e.command, e.channel, e.brightness);
+			}
+			catch (Exception)
+			{
+				MessageBox.Show(AppResources.Common_SendCommandError);
+			}
 		}
 	}
 }
