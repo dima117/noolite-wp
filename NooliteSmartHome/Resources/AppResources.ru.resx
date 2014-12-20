@@ -224,4 +224,7 @@
   <data name="SettingsPage_UserLabel" xml:space="preserve">
     <value>Логин</value>
   </data>
+  <data name="IconPage_Title" xml:space="preserve">
+    <value>пиктограмма группы</value>
+  </data>
 </root>

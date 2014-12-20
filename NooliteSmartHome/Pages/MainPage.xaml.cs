@@ -53,6 +53,9 @@ namespace NooliteSmartHome.Pages
 
 			ApplicationBar.MenuItems.Add(
 				BuildAppBarMenuItem(AppResources.AppBarButtonAbout, BtnAboutClick));
+
+			ApplicationBar.MenuItems.Add(
+				BuildAppBarMenuItem("icons", (a, b) => NavigationService.Navigate(new Uri("/Pages/Icons.xaml", UriKind.Relative))));
 		}
 
 		private void BtnSyncClick(object sender, EventArgs e)

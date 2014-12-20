@@ -94,6 +94,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AuthInfo.cs" />
+    <Compile Include="Helpers\IconOfGroup.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Model\ChannelModel.cs" />
     <Compile Include="Model\GroupDetailsModel.cs" />
@@ -106,6 +107,9 @@
     </Compile>
     <Compile Include="Pages\GroupItem.xaml.cs">
       <DependentUpon>GroupItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Icons.xaml.cs">
+      <DependentUpon>Icons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -138,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\GroupItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Icons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,7 +185,7 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Groups\AlternativeBulb.png" />
+    <Content Include="Assets\Groups\AltBulb.png" />
     <Content Include="Assets\Groups\Bulb.png" />
     <Content Include="Assets\Groups\EnergySavingBulb.png" />
     <Content Include="Assets\Groups\NightLamp.png" />
