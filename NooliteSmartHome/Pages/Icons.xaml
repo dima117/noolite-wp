@@ -29,7 +29,7 @@
 		<!--ContentPanel - place additional content here-->
 		<phone:LongListSelector x:Name="IconGrid" Grid.Row="1" 
 			LayoutMode="Grid" ItemsSource="{Binding}"
-			GridCellSize="100,100"
+			GridCellSize="108,108"
 			Margin="12,0,12,0">
 			<phone:LongListSelector.ItemTemplate>
 				<DataTemplate>
