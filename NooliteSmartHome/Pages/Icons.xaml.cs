@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using NooliteSmartHome.Helpers;
+using NooliteSmartHome.Model;
 using NooliteSmartHome.Resources;
 
 namespace NooliteSmartHome.Pages
@@ -58,20 +63,25 @@ namespace NooliteSmartHome.Pages
 
 			var index = GetGroupIndex();
 			var config = ApplicationData.GetConfiguration();
+			var currentIcon = ApplicationData.Settings.GetIcon(index);
 
 			TbGroupName.Text = config.Groups[index].Name.ToLower();
 
-			var items = Enum.GetValues(typeof (IconOfGroup)).Cast<IconOfGroup>().ToArray();
-			IconGrid.DataContext = BuildGroupListModel(items);
+			var items = Enum.GetValues(typeof(IconOfGroup)).Cast<IconOfGroup>().ToArray();
+			IconGrid.DataContext = BuildGroupListModel(items, currentIcon);
 		}
 
-		private ObservableCollection<IconItemModel> BuildGroupListModel(IconOfGroup[] items)
+		private ObservableCollection<IconItemModel> BuildGroupListModel(IconOfGroup[] items, IconOfGroup currentIcon)
 		{
 			var collection = new ObservableCollection<IconItemModel>();
 
 			foreach (var item in items)
 			{
-				var model = new IconItemModel(item);
+				var model = new IconItemModel(item)
+				{
+					IsSelected = item == currentIcon
+				};
+
 				collection.Add(model);
 			}
 
@@ -93,20 +103,47 @@ namespace NooliteSmartHome.Pages
 
 			throw new ArgumentException();
 		}
-	}
 
-	public class IconItemModel
-	{
-		public readonly IconOfGroup icon;
-
-		public IconItemModel(IconOfGroup item)
+		private void IconGrid_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			icon = item;
+			// Get item of LongListSelector. 
+			var userControlList = new List<IconGridItem>();
+			GetItemsRecursive(IconGrid, ref userControlList);
+
+			foreach (var userControl in userControlList)
+			{
+				userControl.IsSelected = false;
+			}
+
+			// Selected. 
+			if (e.AddedItems.Count > 0 && e.AddedItems[0] != null)
+			{
+				foreach (var userControl in userControlList)
+				{
+					if (e.AddedItems[0].Equals(userControl.DataContext))
+					{
+						userControl.IsSelected = true;
+					}
+				}
+			}
 		}
 
-		public string Path
+		public static void GetItemsRecursive<T>(DependencyObject parents, ref List<T> objectList) where T : DependencyObject
 		{
-			get { return string.Format("../Assets/Groups/{0}.png", icon); }
-		}
+			var childrenCount = VisualTreeHelper.GetChildrenCount(parents);
+
+			for (int i = 0; i < childrenCount; i++)
+			{
+				var child = VisualTreeHelper.GetChild(parents, i);
+
+
+				if (child is T)
+				{
+					objectList.Add(child as T);
+				}
+
+				GetItemsRecursive(child, ref objectList);
+			}
+		} 
 	}
 }

@@ -108,6 +108,10 @@
     <Compile Include="Pages\GroupItem.xaml.cs">
       <DependentUpon>GroupItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\IconGridItem.xaml.cs">
+      <DependentUpon>IconGridItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IconItemModel.cs" />
     <Compile Include="Pages\Icons.xaml.cs">
       <DependentUpon>Icons.xaml</DependentUpon>
     </Compile>
@@ -141,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\GroupItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\IconGridItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
