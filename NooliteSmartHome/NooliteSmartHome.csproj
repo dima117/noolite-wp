@@ -126,7 +126,6 @@
     </Compile>
     <Compile Include="Helpers\ApplicationData.cs" />
     <Compile Include="Helpers\ApplicationSettings.cs" />
-    <Compile Include="TiltEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

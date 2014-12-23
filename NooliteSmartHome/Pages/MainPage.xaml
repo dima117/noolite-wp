@@ -7,6 +7,7 @@
     xmlns:local="clr-namespace:NooliteSmartHome"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -41,7 +42,14 @@
 			<phone:LongListSelector x:Name="GroupList" ItemsSource="{Binding}" SelectionChanged="GroupListBox_OnSelectionChanged">
 				<phone:LongListSelector.ItemTemplate>
 					<DataTemplate>
-						<StackPanel Orientation="Horizontal" local:TiltEffect.IsTiltEnabled="True" Margin="6"  >
+						<StackPanel Orientation="Horizontal" toolkit:TiltEffect.IsTiltEnabled="True" Margin="6"  >
+							<toolkit:ContextMenuService.ContextMenu>
+								<toolkit:ContextMenu>
+									<toolkit:MenuItem Header="change icon" Click="ChangeIconTapMenuOnClick"
+										CommandParameter="{Binding Index}"/>
+								</toolkit:ContextMenu>
+							</toolkit:ContextMenuService.ContextMenu>
+
 							<Border Background="{StaticResource PhoneAccentBrush}" Width="61" Height="61">
 								<Image Width="61" 
 								Height="61"

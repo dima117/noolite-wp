@@ -286,15 +286,6 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to icon of group.
-        /// </summary>
-        public static string IconPage_Title {
-            get {
-                return ResourceManager.GetString("IconPage_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The application isn&apos;t adjusted, please edit.
         /// </summary>
         public static string MainPage_EmptySettings {
