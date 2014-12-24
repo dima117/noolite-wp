@@ -6,7 +6,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using NooliteSmartHome.Helpers;
 using NooliteSmartHome.Model;
@@ -14,7 +13,7 @@ using NooliteSmartHome.Resources;
 
 namespace NooliteSmartHome.Pages
 {
-	public partial class Icons : PhoneApplicationPage
+	public partial class Icons
 	{
 		public Icons()
 		{
@@ -48,6 +47,16 @@ namespace NooliteSmartHome.Pages
 
 		private void SaveButtonClick(object sender, EventArgs e)
 		{
+			var item = IconGrid.SelectedItem as IconItemModel;
+
+			if (item != null)
+			{
+				var index = GetGroupIndex();
+				ApplicationData.Settings.SetIcon(index, item.icon);
+				ApplicationData.SaveCurrentSettings();
+			}
+
+			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
 		}
 
 		private void CancelButtonClick(object sender, EventArgs e)
@@ -68,7 +77,8 @@ namespace NooliteSmartHome.Pages
 			TbGroupName.Text = config.Groups[index].Name.ToLower();
 
 			var items = Enum.GetValues(typeof(IconOfGroup)).Cast<IconOfGroup>().ToArray();
-			IconGrid.DataContext = BuildGroupListModel(items, currentIcon);
+			var collection = BuildGroupListModel(items, currentIcon);
+			IconGrid.DataContext = collection;
 		}
 
 		private ObservableCollection<IconItemModel> BuildGroupListModel(IconOfGroup[] items, IconOfGroup currentIcon)
@@ -106,24 +116,14 @@ namespace NooliteSmartHome.Pages
 
 		private void IconGrid_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			// Get item of LongListSelector. 
 			var userControlList = new List<IconGridItem>();
 			GetItemsRecursive(IconGrid, ref userControlList);
 
-			foreach (var userControl in userControlList)
-			{
-				userControl.IsSelected = false;
-			}
-
-			// Selected. 
 			if (e.AddedItems.Count > 0 && e.AddedItems[0] != null)
 			{
 				foreach (var userControl in userControlList)
 				{
-					if (e.AddedItems[0].Equals(userControl.DataContext))
-					{
-						userControl.IsSelected = true;
-					}
+					userControl.IsSelected = e.AddedItems[0].Equals(userControl.DataContext);
 				}
 			}
 		}

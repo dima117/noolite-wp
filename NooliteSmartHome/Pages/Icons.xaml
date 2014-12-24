@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:NooliteSmartHome.Pages"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -35,7 +36,10 @@
 			Margin="12,0,12,0">
 			<phone:LongListSelector.ItemTemplate>
 				<DataTemplate>
-					<pages:IconGridItem Path="{Binding Path}" IsSelected="{Binding IsSelected}" />
+					<pages:IconGridItem 
+						Path="{Binding Path}" 
+						IsSelected="{Binding IsSelected}" 
+						toolkit:TiltEffect.IsTiltEnabled="True" />
 
 					<!--<Border Width="100" Height="100" Background="{StaticResource PhoneInactiveBrush}" Margin="4">
 						<Image Width="100" Height="100" Source="{Binding Path}" />

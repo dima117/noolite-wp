@@ -53,7 +53,7 @@
 							<Border Background="{StaticResource PhoneAccentBrush}" Width="61" Height="61">
 								<Image Width="61" 
 								Height="61"
-								Source="../Assets/Groups/Bulb.png" />
+								Source="{Binding IconPath}" />
 							</Border>
 							<TextBlock Text="{Binding Name}" Height="61" VerticalAlignment="Center" Style="{StaticResource PhoneTextLargeStyle}" />
 						</StackPanel>

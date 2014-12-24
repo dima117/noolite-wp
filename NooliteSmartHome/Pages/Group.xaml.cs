@@ -32,7 +32,8 @@ namespace NooliteSmartHome.Pages
 		private GroupDetailsModel BuildGroupModel(Pr1132Configuration config, int index)
 		{
 			var group = config.Groups[index];
-			var groupModel = new GroupDetailsModel(group, index);
+			var icon = ApplicationData.Settings.GetIcon(index);
+			var groupModel = new GroupDetailsModel(group, icon, index);
 
 			foreach (var channelNumber in group.ChannelNumbers)
 			{

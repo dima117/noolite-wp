@@ -102,7 +102,8 @@ namespace NooliteSmartHome.Pages
 
 				if (group.Enabled)
 				{
-					var model = new GroupModel(group, i);
+					var icon = ApplicationData.Settings.GetIcon(i);
+					var model = new GroupModel(group, icon, i);
 					collection.Add(model);
 				}
 			}

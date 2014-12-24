@@ -8,8 +8,8 @@ namespace NooliteSmartHome.Pages
 {
 	public partial class IconGridItem : UserControl
 	{
-		private static Color accentColor = (Color)Application.Current.Resources["PhoneAccentColor"];
-		private static Color inactiveColor = (Color)Application.Current.Resources["PhoneInactiveColor"];
+		private static readonly Color accentColor = (Color)Application.Current.Resources["PhoneAccentColor"];
+		private static readonly Color inactiveColor = (Color)Application.Current.Resources["PhoneInactiveColor"];
 
 
 		public IconGridItem()
