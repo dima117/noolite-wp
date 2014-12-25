@@ -173,5 +173,33 @@ namespace NooliteSmartHome.Pages
 				NavigationService.Navigate(new Uri(url, UriKind.Relative));
 			}
 		}
+
+		private void PinToStartTapMenuOnClick(object sender, RoutedEventArgs e)
+		{
+			var item = sender as Microsoft.Phone.Controls.MenuItem;
+
+			if (item != null)
+			{
+				var arg = (item.CommandParameter ?? string.Empty).ToString();
+
+				int index;
+				if (int.TryParse(arg, out index))
+				{
+					var group = ApplicationData.GetConfiguration().Groups[index];
+					var icon = ApplicationData.Settings.GetIcon(index);
+
+					string pageUrl = string.Format("/Pages/Group.xaml?index={0}", index);
+					string iconUrl = string.Format("/Assets/Groups/{0}.png", icon);
+
+					var secTileData = new StandardTileData
+					{
+						Title = group.Name,
+						BackgroundImage = new Uri(iconUrl, UriKind.RelativeOrAbsolute)
+					};
+
+					ShellTile.Create(new Uri(pageUrl, UriKind.RelativeOrAbsolute), secTileData);
+				}
+			}
+		}
 	}
 }

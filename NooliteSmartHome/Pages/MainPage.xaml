@@ -47,6 +47,8 @@
 								<toolkit:ContextMenu>
 									<toolkit:MenuItem Header="change icon" Click="ChangeIconTapMenuOnClick"
 										CommandParameter="{Binding Index}"/>
+									<toolkit:MenuItem Header="pin to start" Click="PinToStartTapMenuOnClick"
+										CommandParameter="{Binding Index}"/>
 								</toolkit:ContextMenu>
 							</toolkit:ContextMenuService.ContextMenu>
 
