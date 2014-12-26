@@ -1,19 +1,11 @@
 ﻿using System.IO;
 using System.Linq;
-using System.Text;
 using NooliteSmartHome.Gateway.Encodings;
 
 namespace NooliteSmartHome.Gateway.Configuration
 {
 	public class Pr1132Configuration
 	{
-		private static Encoding win1251;
-
-		private static Encoding Win1251
-		{
-			get { return win1251 ?? (win1251 = new Windows1251Encoding()); }
-		}
-
 		public Pr1132Configuration()
 		{
 			Groups = new Pr1132ControlGroup[16];
@@ -78,7 +70,7 @@ namespace NooliteSmartHome.Gateway.Configuration
 			var buf = new byte[6];
 			stream.Read(buf, 0, 6);
 
-			if (Win1251.GetString(buf, 0, 6).ToLower() != "pr1132")
+			if (Windows1251Encoding.Instance.GetString(buf, 0, 6).ToLower() != "pr1132")
 			{
 				return false;
 			}
@@ -125,7 +117,7 @@ namespace NooliteSmartHome.Gateway.Configuration
 			var group = new Pr1132ControlGroup();
 
 			var nameBytes = buf.Take(24).ToArray();
-			group.Name = Win1251.GetString(nameBytes, 0, 24).TrimEnd((char)0);
+			group.Name = Windows1251Encoding.Instance.GetString(nameBytes, 0, 24).TrimEnd((char)0);
 			group.Enabled = buf[24] < 64;
 
 			for (int j = 0; j < 4; j++)
@@ -147,7 +139,7 @@ namespace NooliteSmartHome.Gateway.Configuration
 			var channel = new Pr1132Channel();
 
 			var nameBytes = buf.Take(24).ToArray();
-			channel.Name = Win1251.GetString(nameBytes, 0, 24).TrimEnd((char)0);
+			channel.Name = Windows1251Encoding.Instance.GetString(nameBytes, 0, 24).TrimEnd((char)0);
 
 			channel.Type = (Pr1132ChannelUiType)buf[24];
 

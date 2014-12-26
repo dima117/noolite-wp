@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Navigation;
 using NooliteSmartHome.Gateway.Configuration;
@@ -27,6 +28,30 @@ namespace NooliteSmartHome.Pages
 
 			TbGroupName.Text = model.Name.ToLower();
 			ChannelList.DataContext = new ObservableCollection<ChannelModel>(model.Channels);
+
+			UpdateSensorData(config, index);
+		}
+
+		private async void UpdateSensorData(Pr1132Configuration config, int index)
+		{
+			var group = config.Groups[index];
+
+			if (group.Sensors.Any(x => x))
+			{
+				var data = await ApplicationData.Settings.CreateGateway().LoadSensorData();
+
+				if (data != null)
+				{
+					for (int i = 0; i < group.Sensors.Length; i++)
+					{
+						if (group.Sensors[i] && data[i] != null)
+						{
+							T.Inlines.Add(string.Format("{0}°C", data[i].Temperature));
+							H.Inlines.Add(string.Format("{0}%", data[i].Humidity));
+						}
+					}
+				}
+			}
 		}
 
 		private GroupDetailsModel BuildGroupModel(Pr1132Configuration config, int index)

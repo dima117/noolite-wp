@@ -5,6 +5,13 @@
     /// </summary>
     public class Windows1251Encoding : BaseSingleByteEncoding
     {
+		private static Windows1251Encoding instance;
+
+		public static Windows1251Encoding Instance
+		{
+			get { return instance ?? (instance = new Windows1251Encoding()); }
+		}
+
         protected override string Alphabet
         {
             get
