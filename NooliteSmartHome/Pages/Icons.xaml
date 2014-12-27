@@ -26,28 +26,24 @@
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
 			<TextBlock Text="{Binding Path=LocalizedResources.Application_Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
 			<TextBlock x:Name="TbGroupName" Text="" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-			<TextBlock Text="Выберите пиктограмму для группы."/>
+			<TextBlock Text="Выберите пиктограмму для группы." Margin="12,0,0,0"/>
 		</StackPanel>
 
 		<!--ContentPanel - place additional content here-->
 		<phone:LongListSelector x:Name="IconGrid" Grid.Row="1" 
 			LayoutMode="Grid" ItemsSource="{Binding}"
-			GridCellSize="108,108" SelectionChanged="IconGrid_OnSelectionChanged"
-			Margin="12,0,12,0">
+			GridCellSize="110,110" SelectionChanged="IconGrid_OnSelectionChanged"
+			Margin="20,0,0,0">
 			<phone:LongListSelector.ItemTemplate>
 				<DataTemplate>
 					<pages:IconGridItem 
 						Path="{Binding Path}" 
 						IsSelected="{Binding IsSelected}" 
 						toolkit:TiltEffect.IsTiltEnabled="True" />
-
-					<!--<Border Width="100" Height="100" Background="{StaticResource PhoneInactiveBrush}" Margin="4">
-						<Image Width="100" Height="100" Source="{Binding Path}" />
-					</Border>-->
 				</DataTemplate>
 			</phone:LongListSelector.ItemTemplate>
 		</phone:LongListSelector>
-		<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />
+		<!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
 	</Grid>
 
 </phone:PhoneApplicationPage>

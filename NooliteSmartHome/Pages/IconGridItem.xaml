@@ -9,7 +9,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480">
 
-	<Border x:Name="Border" Width="100" Height="100" Margin="4" 
+	<Border x:Name="Border" Width="100" Height="100" Margin="0" 
 		Background="{StaticResource PhoneInactiveBrush}" >
 		<Image x:Name="Image" Width="100" Height="100" />
 	</Border>

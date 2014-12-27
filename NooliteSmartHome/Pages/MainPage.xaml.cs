@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -188,7 +189,7 @@ namespace NooliteSmartHome.Pages
 					var group = ApplicationData.GetConfiguration().Groups[index];
 					var icon = ApplicationData.Settings.GetIcon(index);
 
-					string pageUrl = string.Format("/Pages/Group.xaml?index={0}", index);
+					string pageUrl = string.Format("/Pages/Group.xaml?index={0}&cache={1:N}", index, Guid.NewGuid());
 					string iconUrl = string.Format("/Assets/Groups/Tiles/{0}.png", icon);
 
 					var secTileData = new StandardTileData
