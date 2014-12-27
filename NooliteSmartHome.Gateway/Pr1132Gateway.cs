@@ -66,18 +66,18 @@ namespace NooliteSmartHome.Gateway
 
 		public async Task<Pr1132SensorData[]> LoadSensorData()
 		{
-			//var url = string.Format("sens.xml?cache={0}", DateTime.Now.Ticks);
-			//var response = await SendRequest(url);
+			var url = string.Format("sens.xml?cache={0}", DateTime.Now.Ticks);
+			var response = await SendRequest(url);
 
-			//if (response == null)
-			//{
-			//	return null;
-			//}
+			if (response == null)
+			{
+				return null;
+			}
 
-			//var xml = Windows1251Encoding.Instance.GetString(response, 0, response.Length);
+			var xml = Windows1251Encoding.Instance.GetString(response, 0, response.Length);
 
-			var xml =
-				"<response><snst0>-</snst0><snsh0>-</snsh0><snt0>1</snt0><snst1>23,8</snst1><snsh1>-</snsh1><snt1>0</snt1><snst2>-</snst2><snsh2>-</snsh2><snt2>1</snt2><snst3>-</snst3><snsh3>-</snsh3><snt3>1</snt3></response>";
+			//var xml =
+			//	"<response><snst0>-</snst0><snsh0>-</snsh0><snt0>1</snt0><snst1>23,8</snst1><snsh1>-</snsh1><snt1>0</snt1><snst2>-</snst2><snsh2>-</snsh2><snt2>1</snt2><snst3>-</snst3><snsh3>-</snsh3><snt3>1</snt3></response>";
 			var doc = XDocument.Parse(xml);
 
 			var result = new Pr1132SensorData[4];

@@ -2,45 +2,23 @@
 {
 	public enum IconOfGroup
 	{
-		// bulbs
 		Bulb,
-		AltBulb,
-		LightBulb,
-		EnergySavingBulb,
-		TableLamp,
-		NightLamp,
-
 		Plug,
-		AltPlug,
-		Temperature,
 
-		Baby,
-
+		Cofee,
 		Kitchen,
-		Coffee,
-		AltCoffee,
-
-		Television,
+		Laptop,
 		Monitor,
-		MonitorWin,
 
-		AltBed,
-		Bed,
-		Window,
+		Child,
 
-		Box,
+		Sliders,
 
-		Ladder,
-		AltLadder,
-
-		Wc,
-
-		AltDoor,
 		Door,
 
-		House,
+		Home,
 		Car,
 		Sun,
-		Tree,
+		Tree
 	}
 }

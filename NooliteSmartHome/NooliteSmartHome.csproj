@@ -192,35 +192,32 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Groups\AltBed.png" />
-    <Content Include="Assets\Groups\AltBulb.png" />
-    <Content Include="Assets\Groups\AltCoffee.png" />
-    <Content Include="Assets\Groups\AltDoor.png" />
-    <Content Include="Assets\Groups\AltLadder.png" />
-    <Content Include="Assets\Groups\AltPlug.png" />
-    <Content Include="Assets\Groups\Baby.png" />
-    <Content Include="Assets\Groups\Bed.png" />
-    <Content Include="Assets\Groups\Box.png" />
     <Content Include="Assets\Groups\Bulb.png" />
     <Content Include="Assets\Groups\Car.png" />
-    <Content Include="Assets\Groups\Coffee.png" />
+    <Content Include="Assets\Groups\Child.png" />
+    <Content Include="Assets\Groups\Cofee.png" />
     <Content Include="Assets\Groups\Door.png" />
-    <Content Include="Assets\Groups\EnergySavingBulb.png" />
-    <Content Include="Assets\Groups\House.png" />
+    <Content Include="Assets\Groups\Home.png" />
     <Content Include="Assets\Groups\Kitchen.png" />
-    <Content Include="Assets\Groups\Ladder.png" />
-    <Content Include="Assets\Groups\LightBulb.png" />
+    <Content Include="Assets\Groups\Laptop.png" />
     <Content Include="Assets\Groups\Monitor.png" />
-    <Content Include="Assets\Groups\MonitorWin.png" />
-    <Content Include="Assets\Groups\NightLamp.png" />
     <Content Include="Assets\Groups\Plug.png" />
+    <Content Include="Assets\Groups\Sliders.png" />
     <Content Include="Assets\Groups\Sun.png" />
-    <Content Include="Assets\Groups\TableLamp.png" />
-    <Content Include="Assets\Groups\Television.png" />
-    <Content Include="Assets\Groups\Temperature.png" />
+    <Content Include="Assets\Groups\Tiles\Bulb.png" />
+    <Content Include="Assets\Groups\Tiles\Car.png" />
+    <Content Include="Assets\Groups\Tiles\Child.png" />
+    <Content Include="Assets\Groups\Tiles\Cofee.png" />
+    <Content Include="Assets\Groups\Tiles\Door.png" />
+    <Content Include="Assets\Groups\Tiles\Home.png" />
+    <Content Include="Assets\Groups\Tiles\Kitchen.png" />
+    <Content Include="Assets\Groups\Tiles\Laptop.png" />
+    <Content Include="Assets\Groups\Tiles\Monitor.png" />
+    <Content Include="Assets\Groups\Tiles\Plug.png" />
+    <Content Include="Assets\Groups\Tiles\Sliders.png" />
+    <Content Include="Assets\Groups\Tiles\Sun.png" />
+    <Content Include="Assets\Groups\Tiles\Tree.png" />
     <Content Include="Assets\Groups\Tree.png" />
-    <Content Include="Assets\Groups\Wc.png" />
-    <Content Include="Assets\Groups\Window.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

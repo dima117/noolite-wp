@@ -189,7 +189,7 @@ namespace NooliteSmartHome.Pages
 					var icon = ApplicationData.Settings.GetIcon(index);
 
 					string pageUrl = string.Format("/Pages/Group.xaml?index={0}", index);
-					string iconUrl = string.Format("/Assets/Groups/{0}.png", icon);
+					string iconUrl = string.Format("/Assets/Groups/Tiles/{0}.png", icon);
 
 					var secTileData = new StandardTileData
 					{

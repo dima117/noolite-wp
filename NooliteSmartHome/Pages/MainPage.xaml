@@ -45,9 +45,9 @@
 						<StackPanel Orientation="Horizontal" toolkit:TiltEffect.IsTiltEnabled="True" Margin="6"  >
 							<toolkit:ContextMenuService.ContextMenu>
 								<toolkit:ContextMenu>
-									<toolkit:MenuItem Header="change icon" Click="ChangeIconTapMenuOnClick"
-										CommandParameter="{Binding Index}"/>
 									<toolkit:MenuItem Header="pin to start" Click="PinToStartTapMenuOnClick"
+										CommandParameter="{Binding Index}"/>
+									<toolkit:MenuItem Header="change icon" Click="ChangeIconTapMenuOnClick"
 										CommandParameter="{Binding Index}"/>
 								</toolkit:ContextMenu>
 							</toolkit:ContextMenuService.ContextMenu>
@@ -71,7 +71,7 @@
             if the System Tray is hidden.
 
             Before shipping remove this XAML and the image itself.-->
-		<!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+		<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />
 	</Grid>
 
 </phone:PhoneApplicationPage>
