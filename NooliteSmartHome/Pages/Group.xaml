@@ -33,14 +33,7 @@
 				<RowDefinition Height="Auto"></RowDefinition>
 				<RowDefinition Height="*"></RowDefinition>
 			</Grid.RowDefinitions>
-			<RichTextBox Grid.Row="0">
-				<Paragraph>
-					температура
-					<Bold x:Name="T" Foreground="{StaticResource PhoneAccentBrush}" /> ,
-					влажность
-					<Bold x:Name="H" Foreground="{StaticResource PhoneAccentBrush}" />
-				</Paragraph>
-			</RichTextBox>
+			<RichTextBox x:Name="Sensors" Grid.Row="0" />
 			<ListBox x:Name="ChannelList" Grid.Row="1" ItemsSource="{Binding}">
 				<ListBox.ItemContainerStyle>
 					<Style TargetType="ListBoxItem">

@@ -8,8 +8,8 @@ namespace NooliteSmartHome.Pages
 {
 	public partial class IconGridItem : UserControl
 	{
-		private static readonly Color accentColor = (Color)Application.Current.Resources["PhoneAccentColor"];
-		private static readonly Color inactiveColor = (Color)Application.Current.Resources["PhoneInactiveColor"];
+		public static readonly Color AccentColor = (Color)Application.Current.Resources["PhoneAccentColor"];
+		public static readonly Color InactiveColor = (Color)Application.Current.Resources["PhoneInactiveColor"];
 
 
 		public IconGridItem()
@@ -52,7 +52,7 @@ namespace NooliteSmartHome.Pages
 			if (myControl != null)
 			{
 				var isSelected = (bool)e.NewValue;
-				var color = isSelected ? accentColor : inactiveColor;
+				var color = isSelected ? AccentColor : InactiveColor;
 				myControl.Border.Background = new SolidColorBrush(color);
 			}
 		}

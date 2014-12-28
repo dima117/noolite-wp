@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Documents;
+using System.Windows.Media;
 using System.Windows.Navigation;
+using Microsoft.Phone.Shell;
 using NooliteSmartHome.Gateway.Configuration;
 using NooliteSmartHome.Helpers;
 using NooliteSmartHome.Model;
@@ -29,11 +33,43 @@ namespace NooliteSmartHome.Pages
 			TbGroupName.Text = model.Name.ToLower();
 			ChannelList.DataContext = new ObservableCollection<ChannelModel>(model.Channels);
 
+			BuildLocalizedApplicationBar();
 			UpdateSensorData(config, index);
 		}
 
+		#region app bar
+
+		private ApplicationBarIconButton BuildAppBarButton(string text, string icon, EventHandler handler)
+		{
+			var iconUri = new Uri(icon, UriKind.Relative);
+
+			var appBarButton = new ApplicationBarIconButton(iconUri) { Text = text };
+			appBarButton.Click += handler;
+
+			return appBarButton;
+		}
+
+		private void BuildLocalizedApplicationBar()
+		{
+			ApplicationBar = new ApplicationBar();
+
+
+			ApplicationBar.Buttons.Add(
+				BuildAppBarButton(AppResources.AppBarButtonSync, "/Assets/AppBar/sync.png", BtnSyncClick));
+		}
+
+		private void BtnSyncClick(object sender, EventArgs e)
+		{
+			var index = GetGroupIndex();
+			var config = ApplicationData.GetConfiguration();
+			UpdateSensorData(config, index);
+		}
+
+		#endregion
+
 		private async void UpdateSensorData(Pr1132Configuration config, int index)
 		{
+			Sensors.Blocks.Clear();
 			var group = config.Groups[index];
 
 			if (group.Sensors.Any(x => x))
@@ -46,8 +82,21 @@ namespace NooliteSmartHome.Pages
 					{
 						if (group.Sensors[i] && data[i] != null)
 						{
-							T.Inlines.Add(string.Format("{0}°C", data[i].Temperature));
-							H.Inlines.Add(string.Format("{0}%", data[i].Humidity));
+							var para = new Paragraph();
+
+							if (data[i].Temperature.HasValue)
+							{
+								para.Inlines.Add("температура ");
+								para.Inlines.Add(CreateBold(data[i].Temperature, "{0}°C"));
+
+								if (data[i].Humidity.HasValue)
+								{
+									para.Inlines.Add(", влажность ");
+									para.Inlines.Add(CreateBold(data[i].Humidity, "{0}%"));
+								}
+							}
+
+							Sensors.Blocks.Add(para);
 						}
 					}
 				}
@@ -103,5 +152,22 @@ namespace NooliteSmartHome.Pages
 				MessageBox.Show(AppResources.Common_SendCommandError);
 			}
 		}
+
+
+		#region labels
+
+		private Bold CreateBold(object value, string valueFormat)
+		{
+			var str = string.Format(valueFormat, value);
+			var bold = new Bold
+			{
+				Foreground = new SolidColorBrush(IconGridItem.AccentColor),
+				Inlines = { str }
+			};
+
+			return bold;
+		}
+
+		#endregion
 	}
 }
