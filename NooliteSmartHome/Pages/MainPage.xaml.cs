@@ -23,24 +23,6 @@ namespace NooliteSmartHome.Pages
 
 		#region app bar
 
-		private ApplicationBarIconButton BuildAppBarButton(string text, string icon, EventHandler handler)
-		{
-			var iconUri = new Uri(icon, UriKind.Relative);
-
-			var appBarButton = new ApplicationBarIconButton(iconUri) { Text = text };
-			appBarButton.Click += handler;
-
-			return appBarButton;
-		}
-
-		private ApplicationBarMenuItem BuildAppBarMenuItem(string text, EventHandler handler)
-		{
-			var appBarButton = new ApplicationBarMenuItem { Text = text };
-			appBarButton.Click += handler;
-
-			return appBarButton;
-		}
-
 		private void BuildLocalizedApplicationBar()
 		{
 			ApplicationBar = new ApplicationBar();

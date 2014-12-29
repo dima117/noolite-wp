@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="Helpers\AuthInfo.cs" />
     <Compile Include="Helpers\IconOfGroup.cs" />
+    <Compile Include="Helpers\NshBasePage.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Model\ChannelModel.cs" />
     <Compile Include="Model\GroupDetailsModel.cs" />

@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage
+﻿<helpers:NshBasePage
     x:Class="NooliteSmartHome.Pages.Group"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -7,6 +7,7 @@
     xmlns:local="clr-namespace:NooliteSmartHome.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:helpers="clr-namespace:NooliteSmartHome.Helpers"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -56,4 +57,4 @@
 
 	</Grid>
 
-</phone:PhoneApplicationPage>
+</helpers:NshBasePage>

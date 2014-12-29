@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -39,20 +38,9 @@ namespace NooliteSmartHome.Pages
 
 		#region app bar
 
-		private ApplicationBarIconButton BuildAppBarButton(string text, string icon, EventHandler handler)
-		{
-			var iconUri = new Uri(icon, UriKind.Relative);
-
-			var appBarButton = new ApplicationBarIconButton(iconUri) { Text = text };
-			appBarButton.Click += handler;
-
-			return appBarButton;
-		}
-
 		private void BuildLocalizedApplicationBar()
 		{
 			ApplicationBar = new ApplicationBar();
-
 
 			ApplicationBar.Buttons.Add(
 				BuildAppBarButton(AppResources.AppBarButtonSync, "/Assets/AppBar/sync.png", BtnSyncClick));
@@ -72,7 +60,9 @@ namespace NooliteSmartHome.Pages
 			Sensors.Blocks.Clear();
 			var group = config.Groups[index];
 
-			if (group.Sensors.Any(x => x))
+			var cnt = group.Sensors.Count(x => x);
+
+			if (cnt > 0)
 			{
 				var data = await ApplicationData.Settings.CreateGateway().LoadSensorData();
 
@@ -80,27 +70,43 @@ namespace NooliteSmartHome.Pages
 				{
 					for (int i = 0; i < group.Sensors.Length; i++)
 					{
-						if (group.Sensors[i] && data[i] != null)
+						var sensorData = data[i];
+
+						if (group.Sensors[i] && sensorData != null)
 						{
-							var para = new Paragraph();
-
-							if (data[i].Temperature.HasValue)
-							{
-								para.Inlines.Add("температура ");
-								para.Inlines.Add(CreateBold(data[i].Temperature, "{0}°C"));
-
-								if (data[i].Humidity.HasValue)
-								{
-									para.Inlines.Add(", влажность ");
-									para.Inlines.Add(CreateBold(data[i].Humidity, "{0}%"));
-								}
-							}
+							var para = PrepareSensorData(cnt > 1, i, sensorData);
 
 							Sensors.Blocks.Add(para);
 						}
 					}
 				}
 			}
+		}
+
+		private Paragraph PrepareSensorData(bool addLabel, int index, Pr1132SensorData sensorData)
+		{
+			var para = new Paragraph();
+
+			if (sensorData.Temperature.HasValue)
+			{
+				if (addLabel)
+				{
+					para.Inlines.Add(string.Format("Датчик {0}: температура ", index + 1));
+				}
+				else
+				{
+					para.Inlines.Add("Температура ");
+				}
+
+				para.Inlines.Add(CreateBold(sensorData.Temperature, "{0}°C"));
+
+				if (sensorData.Humidity.HasValue)
+				{
+					para.Inlines.Add(", влажность ");
+					para.Inlines.Add(CreateBold(sensorData.Humidity, "{0}%"));
+				}
+			}
+			return para;
 		}
 
 		private GroupDetailsModel BuildGroupModel(Pr1132Configuration config, int index)
