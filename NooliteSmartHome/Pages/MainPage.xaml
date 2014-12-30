@@ -45,9 +45,13 @@
 						<StackPanel Orientation="Horizontal" toolkit:TiltEffect.IsTiltEnabled="True" Margin="12,6,12,7"  >
 							<toolkit:ContextMenuService.ContextMenu>
 								<toolkit:ContextMenu>
-									<toolkit:MenuItem Header="pin to start" Click="PinToStartTapMenuOnClick"
+									<toolkit:MenuItem 
+										Header="{Binding Path=LocalizedResources.MainPage_TapMenuPinToStart, Source={StaticResource LocalizedStrings}}" 
+										Click="PinToStartTapMenuOnClick"
 										CommandParameter="{Binding Index}"/>
-									<toolkit:MenuItem Header="change icon" Click="ChangeIconTapMenuOnClick"
+									<toolkit:MenuItem 
+										Header="{Binding Path=LocalizedResources.MainPage_TapMenuChangeIcon, Source={StaticResource LocalizedStrings}}" 
+										Click="ChangeIconTapMenuOnClick"
 										CommandParameter="{Binding Index}"/>
 								</toolkit:ContextMenu>
 							</toolkit:ContextMenuService.ContextMenu>

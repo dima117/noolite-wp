@@ -224,4 +224,22 @@
   <data name="SettingsPage_AuthenticationLabel" xml:space="preserve">
     <value>Use authentication</value>
   </data>
+  <data name="Group_Humidity" xml:space="preserve">
+    <value>humidity</value>
+  </data>
+  <data name="Group_Sensor" xml:space="preserve">
+    <value>Sensor</value>
+  </data>
+  <data name="Group_Temperature" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="IconPage_Hint" xml:space="preserve">
+    <value>Please select group icon.</value>
+  </data>
+  <data name="MainPage_TapMenuChangeIcon" xml:space="preserve">
+    <value>change icon</value>
+  </data>
+  <data name="MainPage_TapMenuPinToStart" xml:space="preserve">
+    <value>pin to start</value>
+  </data>
 </root>

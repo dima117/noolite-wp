@@ -224,4 +224,25 @@
   <data name="SettingsPage_UserLabel" xml:space="preserve">
     <value>Логин</value>
   </data>
+  <data name="Group_Humidity" xml:space="preserve">
+    <value>влажность</value>
+  </data>
+  <data name="Group_Sensor" xml:space="preserve">
+    <value>Датчик</value>
+  </data>
+  <data name="Group_Temperature" xml:space="preserve">
+    <value>Температура</value>
+  </data>
+  <data name="IconPage_Hint" xml:space="preserve">
+    <value>Выберите значок для группы.</value>
+  </data>
+  <data name="MainPage_TapMenuChangeIcon" xml:space="preserve">
+    <value>изменить значок группы</value>
+  </data>
+  <data name="MainPage_TapMenuPinToStart" xml:space="preserve">
+    <value>на рабочий стол</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
 </root>

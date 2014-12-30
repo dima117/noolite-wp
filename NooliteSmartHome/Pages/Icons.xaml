@@ -27,7 +27,10 @@
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
 			<TextBlock Text="{Binding Path=LocalizedResources.Application_Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
 			<TextBlock x:Name="TbGroupName" Text="" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-			<TextBlock Text="Выберите пиктограмму для группы." Margin="12,0,0,0"/>
+			<TextBlock 
+				Text="{Binding Path=LocalizedResources.IconPage_Hint, Source={StaticResource LocalizedStrings}}" 
+				Style="{StaticResource PhoneTextSubtleStyle}"
+				Margin="12,0,0,0"/>
 		</StackPanel>
 
 		<!--ContentPanel - place additional content here-->

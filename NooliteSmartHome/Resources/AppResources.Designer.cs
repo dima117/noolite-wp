@@ -196,6 +196,33 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to humidity.
+        /// </summary>
+        public static string Group_Humidity {
+            get {
+                return ResourceManager.GetString("Group_Humidity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sensor.
+        /// </summary>
+        public static string Group_Sensor {
+            get {
+                return ResourceManager.GetString("Group_Sensor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature.
+        /// </summary>
+        public static string Group_Temperature {
+            get {
+                return ResourceManager.GetString("Group_Temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to apply.
         /// </summary>
         public static string GroupItem_ApplyState {
@@ -286,6 +313,15 @@ namespace NooliteSmartHome.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select group icon..
+        /// </summary>
+        public static string IconPage_Hint {
+            get {
+                return ResourceManager.GetString("IconPage_Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The application isn&apos;t adjusted, please edit.
         /// </summary>
         public static string MainPage_EmptySettings {
@@ -300,6 +336,24 @@ namespace NooliteSmartHome.Resources {
         public static string MainPage_LinkSettings {
             get {
                 return ResourceManager.GetString("MainPage_LinkSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to change icon.
+        /// </summary>
+        public static string MainPage_TapMenuChangeIcon {
+            get {
+                return ResourceManager.GetString("MainPage_TapMenuChangeIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pin to start.
+        /// </summary>
+        public static string MainPage_TapMenuPinToStart {
+            get {
+                return ResourceManager.GetString("MainPage_TapMenuPinToStart", resourceCulture);
             }
         }
         

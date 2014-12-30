@@ -89,20 +89,16 @@ namespace NooliteSmartHome.Pages
 
 			if (sensorData.Temperature.HasValue)
 			{
-				if (addLabel)
-				{
-					para.Inlines.Add(string.Format("Датчик {0}: температура ", index + 1));
-				}
-				else
-				{
-					para.Inlines.Add("Температура ");
-				}
+				var text = addLabel
+					? string.Format("{0} {1}: {2} ", AppResources.Group_Sensor, index + 1, AppResources.Group_Temperature.ToLower())
+					: string.Format("{0} ", AppResources.Group_Temperature);
 
+				para.Inlines.Add(text);
 				para.Inlines.Add(CreateBold(sensorData.Temperature, "{0}°C"));
 
 				if (sensorData.Humidity.HasValue)
 				{
-					para.Inlines.Add(", влажность ");
+					para.Inlines.Add(string.Format(", {0} ", AppResources.Group_Humidity.ToLower()));
 					para.Inlines.Add(CreateBold(sensorData.Humidity, "{0}%"));
 				}
 			}
