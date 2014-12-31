@@ -27,5 +27,11 @@ namespace NooliteSmartHome.Helpers
 		}
 
 		#endregion
+
+		public void Navigate(string url, params object[] args)
+		{
+			string url2 = string.Format(url, args);
+			NavigationService.Navigate(new Uri(url2, UriKind.Relative));
+		}
 	}
 }

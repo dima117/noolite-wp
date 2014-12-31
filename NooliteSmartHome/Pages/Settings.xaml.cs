@@ -36,7 +36,7 @@ namespace NooliteSmartHome.Pages
 
 		private void CancelButtonClick(object sender, EventArgs e)
 		{
-			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
+			Navigate("/Pages/MainPage.xaml");
 		}
 
 		#endregion
@@ -113,7 +113,7 @@ namespace NooliteSmartHome.Pages
 			}
 
 			SystemTray.ProgressIndicator.IsVisible = false;
-			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
+			Navigate("/Pages/MainPage.xaml");
 		}
 
 		#endregion

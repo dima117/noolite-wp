@@ -46,12 +46,12 @@ namespace NooliteSmartHome.Pages
 				ApplicationData.SaveCurrentSettings();
 			}
 
-			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
+			Navigate("/Pages/MainPage.xaml");
 		}
 
 		private void CancelButtonClick(object sender, EventArgs e)
 		{
-			NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
+			Navigate("/Pages/MainPage.xaml");
 		}
 
 		#endregion

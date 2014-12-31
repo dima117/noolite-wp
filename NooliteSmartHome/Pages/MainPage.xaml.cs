@@ -45,12 +45,12 @@ namespace NooliteSmartHome.Pages
 
 		private void BtnSettingsClick(object sender, EventArgs e)
 		{
-			NavigationService.Navigate(new Uri("/Pages/Settings.xaml", UriKind.Relative));
+			Navigate("/Pages/Settings.xaml");
 		}
 
 		private void BtnAboutClick(object sender, EventArgs e)
 		{
-			NavigationService.Navigate(new Uri("/Pages/About.xaml", UriKind.Relative));
+			Navigate("/Pages/About.xaml");
 		}
 
 		#endregion
@@ -140,8 +140,7 @@ namespace NooliteSmartHome.Pages
 
 			if (group != null)
 			{
-				string url = string.Format("/Pages/Group.xaml?index={0}", group.Index);
-				NavigationService.Navigate(new Uri(url, UriKind.Relative));
+				Navigate("/Pages/Group.xaml?index={0}", group.Index);
 			}
 		}
 
@@ -151,9 +150,7 @@ namespace NooliteSmartHome.Pages
 
 			if (item != null)
 			{
-				var arg = item.CommandParameter;
-				string url = string.Format("/Pages/Icons.xaml?index={0}", arg);
-				NavigationService.Navigate(new Uri(url, UriKind.Relative));
+				Navigate("/Pages/Icons.xaml?index={0}", item.CommandParameter);
 			}
 		}
 
