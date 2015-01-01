@@ -33,5 +33,21 @@ namespace NooliteSmartHome.Helpers
 			string url2 = string.Format(url, args);
 			NavigationService.Navigate(new Uri(url2, UriKind.Relative));
 		}
+
+		protected int GetIntParameter(string name)
+		{
+			string strIndex;
+
+			if (NavigationContext.QueryString.TryGetValue(name, out strIndex))
+			{
+				int index;
+				if (int.TryParse(strIndex, out index))
+				{
+					return index;
+				}
+			}
+
+			throw new ArgumentException();
+		}
 	}
 }

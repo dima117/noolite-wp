@@ -41,7 +41,7 @@ namespace NooliteSmartHome.Pages
 
 			if (item != null)
 			{
-				var index = GetGroupIndex();
+				var index = GetIntParameter("index");
 				ApplicationData.Settings.SetIcon(index, item.icon);
 				ApplicationData.SaveCurrentSettings();
 			}
@@ -60,7 +60,7 @@ namespace NooliteSmartHome.Pages
 		{
 			base.OnNavigatedTo(e);
 
-			var index = GetGroupIndex();
+			var index = GetIntParameter("index");
 			var config = ApplicationData.GetConfiguration();
 			var currentIcon = ApplicationData.Settings.GetIcon(index);
 
@@ -86,22 +86,6 @@ namespace NooliteSmartHome.Pages
 			}
 
 			return collection;
-		}
-
-		private int GetGroupIndex()
-		{
-			string strIndex;
-
-			if (NavigationContext.QueryString.TryGetValue("index", out strIndex))
-			{
-				int index;
-				if (int.TryParse(strIndex, out index))
-				{
-					return index;
-				}
-			}
-
-			throw new ArgumentException();
 		}
 
 		private void IconGrid_OnSelectionChanged(object sender, SelectionChangedEventArgs e)

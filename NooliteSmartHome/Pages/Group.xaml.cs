@@ -24,7 +24,7 @@ namespace NooliteSmartHome.Pages
 		{
 			base.OnNavigatedTo(e);
 
-			var index = GetGroupIndex();
+			var index = GetIntParameter("index");
 			var config = ApplicationData.GetConfiguration();
 
 			var model = BuildGroupModel(config, index);
@@ -48,7 +48,7 @@ namespace NooliteSmartHome.Pages
 
 		private void BtnSyncClick(object sender, EventArgs e)
 		{
-			var index = GetGroupIndex();
+			var index = GetIntParameter("index");
 			var config = ApplicationData.GetConfiguration();
 			UpdateSensorData(config, index);
 		}
@@ -123,23 +123,7 @@ namespace NooliteSmartHome.Pages
 
 			return groupModel;
 		}
-
-		private int GetGroupIndex()
-		{
-			string strIndex;
-
-			if (NavigationContext.QueryString.TryGetValue("index", out strIndex))
-			{
-				int index;
-				if (int.TryParse(strIndex, out index))
-				{
-					return index;
-				}
-			}
-
-			throw new ArgumentException();
-		}
-
+		
 		private void GroupItem_OnSendCommand(object sender, SendCommandEventArgs e)
 		{
 			try
