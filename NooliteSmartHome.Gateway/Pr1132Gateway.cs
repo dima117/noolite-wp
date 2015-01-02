@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using NooliteSmartHome.Gateway.Configuration;
@@ -88,6 +89,8 @@ namespace NooliteSmartHome.Gateway
 			{
 				for (int i = 0; i < 4; i++)
 				{
+					var separator = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+
 					// state
 					var elState = root.Element("snt" + i);
 					if (elState != null)
@@ -100,7 +103,7 @@ namespace NooliteSmartHome.Gateway
 						if (elT != null)
 						{
 							decimal t;
-							if (decimal.TryParse(elT.Value, out t))
+							if (decimal.TryParse(elT.Value.Replace(",", separator), out t))
 							{
 								data.Temperature = t;
 							}
@@ -111,7 +114,7 @@ namespace NooliteSmartHome.Gateway
 						if (elH != null)
 						{
 							int h;
-							if (int.TryParse(elH.Value, out h))
+							if (int.TryParse(elH.Value.Replace(",", separator), out h))
 							{
 								data.Humidity = h;
 							}
