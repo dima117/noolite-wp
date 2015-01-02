@@ -94,44 +94,39 @@ namespace NooliteSmartHome.Pages
 			return collection;
 		}
 
-		// todo: дублирование кода на странице настроек
 		private async void UpdateConfiguration()
 		{
-			SystemTray.ProgressIndicator.Text = AppResources.Common_ConfigurationIsLoading;
-			SystemTray.ProgressIndicator.IsIndeterminate = true;
-			SystemTray.ProgressIndicator.IsVisible = true;
-
-			byte[] buf = null;
+			ShowProgress(AppResources.Common_ConfigurationIsLoading);
 
 			try
 			{
 				var gateway = ApplicationData.Settings.CreateGateway();
-				buf = await gateway.LoadConfigurationAsync();
+				byte[] buf = await gateway.LoadConfigurationAsync();
+
+				if (buf != null)
+				{
+					var cfg = ApplicationData.SaveConfiguration(buf);
+
+					if (cfg == null)
+					{
+						MessageBox.Show(AppResources.Common_LoadingConfigurationError);
+					}
+					else
+					{
+						MessageBox.Show(AppResources.Common_SynchronizationIsCompletedSuccessfully);
+						UpdateGroupList();
+					}
+				}
+				else
+				{
+					MessageBox.Show(AppResources.Common_LoadingConfigurationError);
+				}
 			}
 			catch
 			{
 			}
 
-			if (buf != null)
-			{
-				var cfg = ApplicationData.SaveConfiguration(buf);
-
-				if (cfg == null)
-				{
-					MessageBox.Show(AppResources.Common_LoadingConfigurationError);
-				}
-				else
-				{
-					MessageBox.Show(AppResources.Common_SynchronizationIsCompletedSuccessfully);
-					UpdateGroupList();
-				}
-			}
-			else
-			{
-				MessageBox.Show(AppResources.Common_LoadingConfigurationError);
-			}
-
-			SystemTray.ProgressIndicator.IsVisible = false;
+			HideProgress();
 		}
 
 		private void GroupListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -169,7 +164,7 @@ namespace NooliteSmartHome.Pages
 					var icon = ApplicationData.Settings.GetIcon(index);
 
 					string pageUrl = string.Format("/Pages/Group.xaml?index={0}&cache={1:N}", index, Guid.NewGuid());
-					string iconUrl = string.Format("/Assets/Groups/Tiles/{0}.png", icon);
+					string iconUrl = icon.GetTileIconPath();
 
 					var secTileData = new StandardTileData
 					{

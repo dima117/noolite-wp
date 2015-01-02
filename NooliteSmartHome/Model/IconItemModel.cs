@@ -15,7 +15,7 @@ namespace NooliteSmartHome.Model
 
 		public string Path
 		{
-			get { return string.Format("../Assets/Groups/{0}.png", icon); }
+			get { return icon.GetIconPath(); }
 		}
 	}
 }

@@ -83,36 +83,32 @@ namespace NooliteSmartHome.Pages
 
 		private async void UpdateConfiguration()
 		{
-			SystemTray.ProgressIndicator.Text = AppResources.Common_ConfigurationIsLoading;
-			SystemTray.ProgressIndicator.IsIndeterminate = true;
-			SystemTray.ProgressIndicator.IsVisible = true;
-
-			byte[] buf = null;
+			ShowProgress(AppResources.Common_ConfigurationIsLoading);
 
 			try
 			{
 				var gateway = ApplicationData.Settings.CreateGateway();
-				buf = await gateway.LoadConfigurationAsync();
+				byte[] buf = await gateway.LoadConfigurationAsync();
+
+				if (buf != null)
+				{
+					var cfg = ApplicationData.SaveConfiguration(buf);
+
+					if (cfg == null)
+					{
+						MessageBox.Show(AppResources.Common_LoadingConfigurationError);
+					}
+				}
+				else
+				{
+					MessageBox.Show(AppResources.Common_LoadingConfigurationError);
+				}
 			}
 			catch
 			{
 			}
 
-			if (buf != null)
-			{
-				var cfg = ApplicationData.SaveConfiguration(buf);
-
-				if (cfg == null)
-				{
-					MessageBox.Show(AppResources.Common_LoadingConfigurationError);
-				}
-			}
-			else
-			{
-				MessageBox.Show(AppResources.Common_LoadingConfigurationError);
-			}
-
-			SystemTray.ProgressIndicator.IsVisible = false;
+			HideProgress();
 			Navigate("/Pages/MainPage.xaml");
 		}
 

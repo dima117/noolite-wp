@@ -9,7 +9,7 @@ namespace NooliteSmartHome.Model
 		{
 			Index = index;
 			Name = group.Name;
-			IconPath = string.Format("../Assets/Groups/{0}.png", icon);
+			IconPath = icon.GetIconPath();
 		}
 
 		public int Index { get; set; }

@@ -56,8 +56,7 @@ namespace NooliteSmartHome.Pages
 		#endregion
 
 		private async void UpdateSensorData(Pr1132Configuration config, int index)
-		{
-			Sensors.Blocks.Clear();
+		{	
 			var group = config.Groups[index];
 
 			var cnt = group.Sensors.Count(x => x);
@@ -65,6 +64,8 @@ namespace NooliteSmartHome.Pages
 			if (cnt > 0)
 			{
 				var data = await ApplicationData.Settings.CreateGateway().LoadSensorData();
+
+				Sensors.Blocks.Clear();
 
 				if (data != null)
 				{

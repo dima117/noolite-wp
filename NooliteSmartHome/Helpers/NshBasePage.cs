@@ -49,5 +49,17 @@ namespace NooliteSmartHome.Helpers
 
 			throw new ArgumentException();
 		}
+
+		protected void ShowProgress(string message)
+		{
+			SystemTray.ProgressIndicator.Text = message;
+			SystemTray.ProgressIndicator.IsIndeterminate = true;
+			SystemTray.ProgressIndicator.IsVisible = true;
+		}
+
+		protected void HideProgress()
+		{
+			SystemTray.ProgressIndicator.IsVisible = false;
+		}
 	}
 }
