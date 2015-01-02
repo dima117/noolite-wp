@@ -27,26 +27,31 @@
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
 			<TextBlock Text="{Binding Path=LocalizedResources.Application_Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
 			<TextBlock x:Name="TbGroupName" Text="" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-			<TextBlock 
-				Text="{Binding Path=LocalizedResources.IconPage_Hint, Source={StaticResource LocalizedStrings}}" 
-				Style="{StaticResource PhoneTextSubtleStyle}"
-				Margin="12,0,0,0"/>
 		</StackPanel>
 
-		<!--ContentPanel - place additional content here-->
-		<phone:LongListSelector x:Name="IconGrid" Grid.Row="1" 
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,4,0" >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+			</Grid.RowDefinitions>
+			<TextBlock Grid.Row="0" 
+				Text="{Binding Path=LocalizedResources.IconPage_Hint, Source={StaticResource LocalizedStrings}}" 
+				Style="{StaticResource PhoneTextSubtleStyle}"
+				Margin="10,0,0,6" />
+			<phone:LongListSelector x:Name="IconGrid" Grid.Row="1" 
 			LayoutMode="Grid" ItemsSource="{Binding}"
-			GridCellSize="110,110" SelectionChanged="IconGrid_OnSelectionChanged"
-			Margin="20,0,0,0">
-			<phone:LongListSelector.ItemTemplate>
-				<DataTemplate>
-					<pages:IconGridItem 
+			GridCellSize="108,108" SelectionChanged="IconGrid_OnSelectionChanged"
+			Margin="8,0,0,0">
+				<phone:LongListSelector.ItemTemplate>
+					<DataTemplate>
+						<pages:IconGridItem 
 						Path="{Binding Path}" 
 						IsSelected="{Binding IsSelected}" 
 						toolkit:TiltEffect.IsTiltEnabled="True" />
-				</DataTemplate>
-			</phone:LongListSelector.ItemTemplate>
-		</phone:LongListSelector>
+					</DataTemplate>
+				</phone:LongListSelector.ItemTemplate>
+			</phone:LongListSelector>
+		</Grid>
 	</Grid>
 
 </helpers:NshBasePage>
